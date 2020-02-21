@@ -7,7 +7,7 @@ const Container = styled.div``;
 function VideosGratuitosPage() {
 	return (
 		<Container>
-			<SEO title="Assinante" />
+			<SEO title="Videos Gratuitos" />
 		</Container>
 	);
 }

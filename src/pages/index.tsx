@@ -6,7 +6,7 @@ const Container = styled.div``;
 
 function IndexPage() {
 	return (
-		<Container id="index-page">
+		<Container>
 			<HeroSection />
 		</Container>
 	);

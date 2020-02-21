@@ -1,3 +1,4 @@
+import { Router } from "@reach/router";
 import * as React from "react";
 import styled from "styled-components";
 import SEO from "../components/utils/Seo";
@@ -14,6 +15,9 @@ function FilmesPage() {
 	return (
 		<Container>
 			<SEO title="Filmes" />
+			<Router basepath="/filmes">
+				{/* <Route path="/" component={} /> */}
+			</Router>
 		</Container>
 	);
 }
