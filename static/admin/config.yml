@@ -22,5 +22,24 @@ collections:
         file: "static/content/header/index.md"
         create: true
         fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "header",
+            }
           - { label: "Titulo", name: "title", widget: "string" }
           - { label: "Caminho", name: "path", widget: "string" }
+      - label: "Footer"
+        name: "footer"
+        file: "static/content/footer/index.md"
+        create: true
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "footer",
+            }
+          - { label: "Texto", name: "text", widget: "string" }
+          - { label: "Link", name: "link", widget: "string" }
