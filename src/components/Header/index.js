@@ -2,8 +2,15 @@ import { Link } from "gatsby";
 import * as React from "react";
 import useModal from "react-hooks-use-modal";
 import styled from "styled-components";
+import { DownArrowAlt } from "styled-icons/boxicons-regular/DownArrowAlt";
 import { Close } from "styled-icons/material/Close";
-import { COLOR_1, COLOR_4, COLOR_6, WHITE_COLOR } from "../../utils/colors";
+import {
+	COLOR_1,
+	COLOR_4,
+	COLOR_5,
+	COLOR_6,
+	WHITE_COLOR,
+} from "../../utils/colors";
 import { HEADER_HEIGHT, RESPONSIVE_HEADER_WIDTH } from "../../utils/constants";
 import { headerData } from "../../utils/data";
 import { useWindowSize } from "../../utils/helpers";
@@ -24,11 +31,15 @@ const Container = styled.header`
 
 const HeaderOptionsContainer = styled.nav`
 	margin-right: 25px;
+	display: flex;
+	flex-direction: row;
+	position: relative;
 `;
 
 const HeaderUl = styled.ul`
 	display: flex;
 	flex-direction: row;
+	margin-right: 180px;
 	@media (max-width: ${RESPONSIVE_HEADER_WIDTH}px) {
 		flex-direction: column;
 	}
@@ -111,6 +122,35 @@ const CloseIconStyled = styled(Close)`
 	width: 30px;
 `;
 
+const ButtonAssine = styled(Link)`
+	background-color: ${COLOR_5};
+	text-decoration: none;
+	color: ${WHITE_COLOR};
+	padding: 10px 40px;
+	top: 35px;
+	position: fixed;
+	right: 10px;
+	border-radius: 5px;
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+	font-size: 1.5em;
+	font-weight: 600;
+	width: min-content;
+	text-align: center;
+	box-shadow: 0 0 5px ${COLOR_5};
+	display: flex;
+	flex-direction: row;
+`;
+
+const IconStyled = styled(DownArrowAlt)`
+	height: 50px;
+	width: 50px;
+	left: 5px;
+	top: -25px;
+	position: absolute;
+	transform: rotate(-35deg);
+`;
+
 function NavMenu() {
 	return (
 		<HeaderUl>
@@ -146,7 +186,7 @@ function Header() {
 				<LogoContainer>
 					<HeaderLogo />
 				</LogoContainer>
-				{width && width < RESPONSIVE_HEADER_WIDTH ? (
+				{width && width <= RESPONSIVE_HEADER_WIDTH ? (
 					<MobileButton onClick={open} aria-label="Mobile menu">
 						{isOpen ? (
 							<CloseIconStyled />
@@ -161,6 +201,10 @@ function Header() {
 				) : (
 					<HeaderOptionsContainer>
 						<NavMenu />
+						<ButtonAssine to="/inscricao">
+							<IconStyled />
+							Assinar Conteudo
+						</ButtonAssine>
 					</HeaderOptionsContainer>
 				)}
 			</Container>

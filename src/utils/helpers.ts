@@ -29,8 +29,20 @@ export function useWindowSize() {
 }
 
 export function getResponsiveIframeSize(width: number) {
-	let responsiveWidth = 600;
-	let responsiveHeight = 340;
+	let responsiveWidth = 700;
+	let responsiveHeight = 400;
+	if (width < 1550) {
+		responsiveWidth = 600;
+		responsiveHeight = 340;
+	}
+	if (width < 1370) {
+		responsiveWidth = 800;
+		responsiveHeight = 450;
+	}
+	if (width < 830) {
+		responsiveWidth = 600;
+		responsiveHeight = 340;
+	}
 	if (width < 700) {
 		responsiveWidth = width - 85;
 	}

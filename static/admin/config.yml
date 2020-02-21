@@ -1,9 +1,20 @@
 backend:
   name: github
-  repo: your-username/your-repo-name
+  repo: dougg0k/eliasjunior_filmes
   branch: master
 
 media_folder: static/assets
 public_folder: /assets
 
+# logo_url: https://eliasjuniorfilmes.com.br/assets/logo_main.png
+
 locale: "pt-br"
+
+collections:
+  - name: "header"
+    label: "Header"
+    folder: "header"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Path", name: "path", widget: "string" }
