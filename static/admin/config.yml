@@ -6,6 +6,7 @@ backend:
 media_folder: static/assets
 public_folder: /assets
 
+# site_url: https://eliasjuniorfilmes.com.br
 # logo_url: https://eliasjuniorfilmes.com.br/assets/logo_main.png
 
 locale: "pt-br"
