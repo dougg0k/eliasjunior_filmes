@@ -40,6 +40,10 @@ const LinksContainer = styled.div`
 	}
 `;
 
+interface AnchorProps {
+	disabled: boolean;
+}
+
 const Anchor = styled.a`
 	color: ${WHITE_COLOR};
 	padding: 5px;
@@ -48,7 +52,8 @@ const Anchor = styled.a`
 	display: flex;
 	align-items: center;
 	align-self: center;
-	pointer-events: ${({ disabled }) => (disabled ? "none" : "auto")};
+	pointer-events: ${({ disabled }: AnchorProps) =>
+		disabled ? "none" : "auto"};
 	@media (max-width: 1370px) {
 		width: auto;
 	}

@@ -16,6 +16,7 @@ module.exports = {
 	},
 	plugins: [
 		`gatsby-plugin-netlify-cms`,
+
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-netlify`,
@@ -27,6 +28,14 @@ module.exports = {
 				path: `${__dirname}/src/images`,
 			},
 		},
+		{
+			resolve: `gatsby-source-filesystem`,
+			options: {
+				name: `content`,
+				path: `${__dirname}/static/content`,
+			},
+		},
+		`gatsby-transformer-remark`,
 		{
 			resolve: `gatsby-plugin-prefetch-google-fonts`,
 			options: {

@@ -43,7 +43,13 @@ collections:
     folder: "static/content/indexPage"
     create: false
     fields:
-      - { label: "Video Link", name: "videoLink", widget: "string" }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "indexPage",
+        }
+      - { label: "Video Link URL", name: "videoUrl", widget: "string" }
   - label: "Filmes"
     name: "filmes"
     folder: "static/content/filmes"

@@ -159,9 +159,7 @@ interface Props {
 	videoUrl?: string;
 }
 
-function HeroSection({
-	videoUrl = "https://player.vimeo.com/video/372041420",
-}: Props) {
+function HeroSection({ videoUrl = "" }: Props) {
 	const { width } = useWindowSize();
 	const { responsiveHeight, responsiveWidth } = getResponsiveIframeSize(
 		width || 0,
