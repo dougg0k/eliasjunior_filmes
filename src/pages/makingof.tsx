@@ -15,17 +15,10 @@ const Container = styled.div`
 	justify-content: center;
 `;
 
-const Mensagem = styled.p`
-	font-size: 2.2em;
-	font-weight: 600;
-	text-align: center;
-`;
-
 function MakingOfPage() {
 	return (
 		<Container>
 			<SEO title="Making Of" />
-			<Mensagem>Pagina em Construção</Mensagem>
 		</Container>
 	);
 }

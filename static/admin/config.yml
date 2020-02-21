@@ -37,7 +37,7 @@ collections:
           default: "footer",
         }
       - { label: "Texto", name: "text", widget: "string" }
-      - { label: "Link", name: "link", widget: "string", required: false }
+      - { label: "Link URL", name: "url", widget: "string", required: false }
   - label: "Pagina Principal"
     name: "indexPage"
     folder: "static/content/indexPage"
@@ -46,14 +46,201 @@ collections:
       - { label: "Video Link", name: "videoLink", widget: "string" }
   - label: "Filmes"
     name: "filmes"
-    folder: "static/content/header"
+    folder: "static/content/filmes"
     create: true
     fields:
       - {
           label: "Template Key",
           name: "templateKey",
           widget: "hidden",
-          default: "header",
+          default: "filmes",
         }
       - { label: "Titulo", name: "title", widget: "string" }
-      - { label: "Caminho", name: "path", widget: "string" }
+      - { label: "Descricao", name: "description", widget: "text" }
+      - { label: "Link URL", name: "url", widget: "string" }
+      - {
+          label: "Trailer URL",
+          name: "trailerUrl",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Capa", name: "cover", widget: "image" }
+      - {
+          label: "Foto Adicional",
+          name: "additionalPicture",
+          widget: "image",
+          required: false,
+        }
+  - label: "Documentarios"
+    name: "documentarios"
+    folder: "static/content/documentarios"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "documentarios",
+        }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Descricao", name: "description", widget: "text" }
+      - { label: "Link URL", name: "url", widget: "string" }
+      - {
+          label: "Trailer URL",
+          name: "trailerUrl",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Capa", name: "cover", widget: "image" }
+      - {
+          label: "Foto Adicional",
+          name: "additionalPicture",
+          widget: "image",
+          required: false,
+        }
+  - label: "VideoClipes"
+    name: "videoclipes"
+    folder: "static/content/videoclipes"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "videoclipes",
+        }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Link URL", name: "url", widget: "string" }
+  - label: "Especiais"
+    name: "especiais"
+    folder: "static/content/especiais"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "especiais",
+        }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Descricao", name: "description", widget: "text" }
+      - { label: "Link URL", name: "url", widget: "string" }
+      - {
+          label: "Trailer URL",
+          name: "trailerUrl",
+          widget: "string",
+          required: false,
+        }
+      - { label: "Capa", name: "cover", widget: "image" }
+      - {
+          label: "Foto Adicional",
+          name: "additionalPicture",
+          widget: "image",
+          required: false,
+        }
+  - label: "Palestras"
+    name: "palestras"
+    folder: "static/content/palestras"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "palestras",
+        }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Link URL", name: "url", widget: "string" }
+      - {
+          label: "Descricao",
+          name: "descricao",
+          widget: "text",
+          required: false,
+        }
+  - label: "Entrevistas"
+    name: "entrevistas"
+    folder: "static/content/entrevistas"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "entrevistas",
+        }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Link URL", name: "url", widget: "string" }
+  - label: "MakingOf"
+    name: "makingof"
+    folder: "static/content/makingof"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "makingof",
+        }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Link URL", name: "url", widget: "string" }
+  - label: "Cursos"
+    name: "cursos"
+    folder: "static/content/cursos"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "cursos",
+        }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Link URL", name: "url", widget: "string" }
+      - {
+          label: "Trailer URL",
+          name: "trailerUrl",
+          widget: "string",
+          required: false,
+        }
+      - {
+          label: "Descricao",
+          name: "descricao",
+          widget: "text",
+          required: false,
+        }
+      - { label: "Capa", name: "cover", widget: "image" }
+  - label: "Series"
+    name: "series"
+    folder: "static/content/series"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "series",
+        }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - {
+          label: "Episodios",
+          name: "episodios",
+          required: true,
+          widget: "list",
+          fields:
+            [
+              {
+                label: "Titulo",
+                name: "titulo",
+                required: true,
+                widget: "string",
+              },
+              { label: "Descricao", name: "descricao", widget: "text" },
+              { label: "Link URL", name: "url", widget: "string" },
+              {
+                label: "Trailer URL",
+                name: "trailerUrl",
+                widget: "string",
+                required: false,
+              },
+            ],
+        }
