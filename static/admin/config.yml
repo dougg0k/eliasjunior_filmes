@@ -9,12 +9,12 @@ public_folder: /assets
 # site_url: https://eliasjuniorfilmes.com.br
 # logo_url: https://eliasjuniorfilmes.com.br/assets/logo_main.png
 
-locale: "pt-br"
+locale: "pt"
 
 collections:
   - name: "header"
     label: "Header"
-    folder: "static/content/header"
+    file: "static/content/header/index.md"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
