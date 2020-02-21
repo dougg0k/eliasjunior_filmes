@@ -5,6 +5,7 @@ import Typical from "react-typical";
 import styled from "styled-components";
 import { COLOR_1, COLOR_3, WHITE_COLOR } from "../../utils/colors";
 import { HEADER_HEIGHT } from "../../utils/constants";
+import { getResponsiveIframeSize, useWindowSize } from "../../utils/helpers";
 import AssineButton from "../common/AssineButton";
 import MainPhoto from "../common/MainPhoto";
 
@@ -28,11 +29,14 @@ const Container = styled.div`
 
 const IframeContainer = styled.div`
 	z-index: 10;
-	height: 420px;
-	margin-top: -25px;
+	margin-top: -100px;
 	width: 45%;
 	@media (max-width: 1370px) {
 		width: unset;
+		margin-top: 0;
+	}
+	@media (max-width: 820px) {
+		margin-top: -50px;
 	}
 `;
 
@@ -152,6 +156,10 @@ const typicalSteps = [
 ];
 
 function HeroSection() {
+	const { width } = useWindowSize();
+	const { responsiveHeight, responsiveWidth } = getResponsiveIframeSize(
+		width || 0,
+	);
 	return (
 		<Container>
 			<MainPhoto />
@@ -182,7 +190,12 @@ function HeroSection() {
 				</ButtonContainer>
 			</ContentContainer>
 			<IframeContainer>
-				<PlayerStyled url="https://player.vimeo.com/video/372041420" controls />
+				<PlayerStyled
+					url="https://player.vimeo.com/video/372041420"
+					width={responsiveWidth}
+					height={responsiveHeight}
+					controls
+				/>
 			</IframeContainer>
 		</Container>
 	);
