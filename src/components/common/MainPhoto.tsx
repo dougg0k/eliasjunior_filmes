@@ -5,21 +5,15 @@ import styled from "styled-components";
 
 const StyledImg = styled(Img)`
 	position: unset !important;
-	background-position: 50% 0px;
-	background-attachment: fixed;
-	background-size: cover;
-	z-index: -1;
-	opacity: initial !important;
-	&::before,
-	&::after {
-		background-blend-mode: darken;
-	}
+	background-size: contain;
+	background-position: top;
+	z-index: 0;
 `;
 
-const BackgroundImage = () => {
+const MainPhoto = () => {
 	const data = useStaticQuery(graphql`
 		query {
-			placeholderImage: file(relativePath: { eq: "geometric_background.png" }) {
+			placeholderImage: file(relativePath: { eq: "main_photo.jpg" }) {
 				childImageSharp {
 					fluid(quality: 100) {
 						...GatsbyImageSharpFluid_withWebp
@@ -32,4 +26,4 @@ const BackgroundImage = () => {
 	return <StyledImg fluid={data.placeholderImage.childImageSharp.fluid} />;
 };
 
-export default BackgroundImage;
+export default MainPhoto;
