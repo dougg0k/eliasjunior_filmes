@@ -37,10 +37,23 @@ collections:
           default: "footer",
         }
       - { label: "Texto", name: "text", widget: "string" }
-      - { label: "Link", name: "link", widget: "string" }
+      - { label: "Link", name: "link", widget: "string", required: false }
   - label: "Pagina Principal"
-    name: "mainPage"
-    folder: "static/content/mainPage"
-    create: true
+    name: "indexPage"
+    folder: "static/content/indexPage"
+    create: false
     fields:
       - { label: "Video Link", name: "videoLink", widget: "string" }
+  - label: "Filmes"
+    name: "filmes"
+    folder: "static/content/header"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "header",
+        }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Caminho", name: "path", widget: "string" }

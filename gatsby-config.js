@@ -2,7 +2,7 @@ module.exports = {
 	siteMetadata: {
 		title: `Elias Junior Filmes`,
 		description: `Filmes, series, documentarios, videoclipes, cursos, especiais e entrevista da Rota, do GATE, do Canil e de outras unidades das nossa policias.`,
-		author: ``,
+		author: `Douglas Galdino`,
 		siteUrl: `https://eliasjuniorfilmes.com.br`,
 		social: {
 			facebook: `https://www.facebook.com/diretoreliasjunior/`,
