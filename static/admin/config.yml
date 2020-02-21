@@ -12,34 +12,35 @@ public_folder: /assets
 locale: "pt"
 
 collections:
-  - name: "principaisConteudos"
-    label: "Conteudos Principais"
-    description: "Conteudos do menu de navegacao, footer e pagina principal"
+  - label: "Header"
+    name: "header"
+    folder: "static/content/header"
     create: true
-    files:
-      - label: "Header"
-        name: "header"
-        file: "static/content/header/index.md"
-        create: true
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "header",
-            }
-          - { label: "Titulo", name: "title", widget: "string" }
-          - { label: "Caminho", name: "path", widget: "string" }
-      - label: "Footer"
-        name: "footer"
-        file: "static/content/footer/index.md"
-        create: true
-        fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "footer",
-            }
-          - { label: "Texto", name: "text", widget: "string" }
-          - { label: "Link", name: "link", widget: "string" }
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "header",
+        }
+      - { label: "Titulo", name: "title", widget: "string" }
+      - { label: "Caminho", name: "path", widget: "string" }
+  - label: "Footer"
+    name: "footer"
+    folder: "static/content/footer"
+    create: true
+    fields:
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "hidden",
+          default: "footer",
+        }
+      - { label: "Texto", name: "text", widget: "string" }
+      - { label: "Link", name: "link", widget: "string" }
+  - label: "Pagina Principal"
+    name: "mainPage"
+    folder: "static/content/mainPage"
+    create: true
+    fields:
+      - { label: "Video Link", name: "videoLink", widget: "string" }
