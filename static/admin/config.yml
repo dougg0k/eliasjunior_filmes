@@ -14,7 +14,7 @@ locale: "pt-br"
 collections:
   - name: "header"
     label: "Header"
-    folder: "header"
+    folder: "static/content/header"
     create: true
     fields:
       - { label: "Title", name: "title", widget: "string" }
