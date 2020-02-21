@@ -155,7 +155,13 @@ const typicalSteps = [
 	1000,
 ];
 
-function HeroSection() {
+interface Props {
+	videoUrl?: string;
+}
+
+function HeroSection({
+	videoUrl = "https://player.vimeo.com/video/372041420",
+}: Props) {
 	const { width } = useWindowSize();
 	const { responsiveHeight, responsiveWidth } = getResponsiveIframeSize(
 		width || 0,
@@ -191,7 +197,7 @@ function HeroSection() {
 			</ContentContainer>
 			<IframeContainer>
 				<PlayerStyled
-					url="https://player.vimeo.com/video/372041420"
+					url={videoUrl}
 					width={responsiveWidth}
 					height={responsiveHeight}
 					controls
