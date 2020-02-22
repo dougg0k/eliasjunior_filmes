@@ -1,4 +1,4 @@
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import * as React from "react";
 import useModal from "react-hooks-use-modal";
 import styled from "styled-components";
@@ -12,7 +12,6 @@ import {
 	WHITE_COLOR,
 } from "../../utils/colors";
 import { HEADER_HEIGHT, RESPONSIVE_HEADER_WIDTH } from "../../utils/constants";
-import { headerData } from "../../utils/data";
 import { useWindowSize } from "../../utils/helpers";
 import Logo from "../common/Logo";
 
@@ -151,14 +150,21 @@ const IconStyled = styled(DownArrowAlt)`
 	transform: rotate(-35deg);
 `;
 
-function NavMenu() {
+interface NavProps {
+	data: [{ node: { frontmatter: { title: string; path: string } } }];
+}
+
+function NavMenu({ data }: NavProps) {
 	return (
 		<HeaderUl>
-			{headerData.map(option => (
-				<HeaderLi key={option.title}>
-					<StyledLink to={option.path}>{option.title}</StyledLink>
-				</HeaderLi>
-			))}
+			{data.map(item => {
+				const option = item.node.frontmatter;
+				return (
+					<HeaderLi key={option.title}>
+						<StyledLink to={option.path}>{option.title}</StyledLink>
+					</HeaderLi>
+				);
+			})}
 		</HeaderUl>
 	);
 }
@@ -174,12 +180,31 @@ function HeaderLogo() {
 function Header() {
 	const [Modal, open, close, isOpen] = useModal("modal-id", true);
 	const { width } = useWindowSize();
+
+	const data = useStaticQuery(graphql`
+		query HeaderQuery {
+			allMarkdownRemark(
+				filter: { frontmatter: { templateKey: { eq: "header" } } }
+				sort: { order: DESC, fields: [frontmatter___createdAt] }
+			) {
+				edges {
+					node {
+						frontmatter {
+							title
+							path
+							# date(formatString: "DD/MM/YYYY")
+						}
+					}
+				}
+			}
+		}
+	`);
 	return (
 		<>
 			<Modal>
 				<SideBar>
 					<HeaderLogo />
-					<NavMenu />
+					<NavMenu data={data.allMarkdownRemark.edges} />
 				</SideBar>
 			</Modal>
 			<Container>
@@ -200,7 +225,7 @@ function Header() {
 					</MobileButton>
 				) : (
 					<HeaderOptionsContainer>
-						<NavMenu />
+						<NavMenu data={data.allMarkdownRemark.edges} />
 						<ButtonAssine to="/inscricao">
 							<IconStyled />
 							Assinar Conteudo

@@ -131,7 +131,7 @@ const Button = styled(Link)`
 		props.alternative ? COLOR_1 : WHITE_COLOR};
 	outline: none;
 	border: ${(props: CommonButtonsProps) =>
-		props.alternative ? `2px solid ${COLOR_1}` : 0};
+		props.alternative ? `2px solid ${COLOR_1}` : `none`};
 	text-decoration: none;
 	&:hover {
 		cursor: pointer;
@@ -178,7 +178,7 @@ function HeroSection({ videoUrl = "" }: Props) {
 						/>
 					</TopTextContainer>
 					<SecondAdditionalText>
-						da Rota, do GATE, do Canil e de outras unidades das nossas policias.
+						da ROTA, do GATE, do Canil e de outras unidades das nossas policias.
 					</SecondAdditionalText>
 				</TextContainer>
 				<ButtonContainer>

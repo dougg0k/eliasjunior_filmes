@@ -25,6 +25,12 @@ collections:
         }
       - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Caminho", name: "path", widget: "string" }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
+        }
   - label: "Footer"
     name: "footer"
     folder: "static/content/footer"

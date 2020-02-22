@@ -6,7 +6,7 @@ const Container = styled.div``;
 
 function IndexPage() {
 	const data = useStaticQuery(graphql`
-		query MainPageVideoUrl {
+		query MainPageQuery {
 			allMarkdownRemark(
 				filter: { frontmatter: { templateKey: { eq: "indexPage" } } }
 			) {
