@@ -1,6 +1,6 @@
+import Vimeo from "@u-wave/react-vimeo";
 import { Link } from "gatsby";
 import * as React from "react";
-import ReactPlayer from "react-player";
 import Typical from "react-typical";
 import styled from "styled-components";
 import { COLOR_1, COLOR_3, WHITE_COLOR } from "../../utils/colors";
@@ -30,18 +30,20 @@ const Container = styled.div`
 const IframeContainer = styled.div`
 	z-index: 10;
 	margin-top: -100px;
-	width: 45%;
+	margin-right: 100px;
 	@media (max-width: 1370px) {
 		width: unset;
 		margin-top: 0;
+		margin-right: 0;
 	}
 	@media (max-width: 820px) {
 		margin-top: -50px;
 	}
 `;
 
-const PlayerStyled = styled(ReactPlayer)`
+const PlayerStyled = styled(Vimeo)`
 	box-shadow: 0 0 10px ${COLOR_1};
+	display: flex;
 `;
 
 const ContentContainer = styled.div`
@@ -195,10 +197,9 @@ function HeroSection({ videoUrl = "" }: Props) {
 			</ContentContainer>
 			<IframeContainer>
 				<PlayerStyled
-					url={videoUrl}
+					video={videoUrl}
 					width={responsiveWidth}
 					height={responsiveHeight}
-					controls
 				/>
 			</IframeContainer>
 		</Container>

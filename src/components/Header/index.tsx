@@ -12,7 +12,7 @@ import {
 	WHITE_COLOR,
 } from "../../utils/colors";
 import { HEADER_HEIGHT, RESPONSIVE_HEADER_WIDTH } from "../../utils/constants";
-import { useWindowSize } from "../../utils/helpers";
+import { normalizeGraphQLData, useWindowSize } from "../../utils/helpers";
 import Logo from "../common/Logo";
 
 const Container = styled.header`
@@ -69,6 +69,8 @@ const StyledLink = styled(Link)`
 
 const LogoStyledLink = styled(Link)`
 	text-decoration: none;
+	outline: none;
+	border: none;
 `;
 
 const LogoContainer = styled.div`
@@ -171,15 +173,14 @@ const ButtonAssine = styled(Link)`
 	}
 `;
 
-interface NavProps {
-	data: [{ node: { frontmatter: { title: string; path: string } } }];
-}
+type NavProps = {
+	data: Array<{ title: string; path: string }>;
+};
 
 function NavMenu({ data }: NavProps) {
 	return (
 		<HeaderUl>
-			{data.map(item => {
-				const option = item.node.frontmatter;
+			{data.map(option => {
 				return (
 					<HeaderLi key={option.title}>
 						<StyledLink to={option.path}>{option.title}</StyledLink>
@@ -218,12 +219,13 @@ function Header() {
 			}
 		}
 	`);
+	const headerData = normalizeGraphQLData(data.allMarkdownRemark.edges);
 	return (
 		<>
 			<Modal>
 				<SideBar>
 					<HeaderLogo />
-					<NavMenu data={data.allMarkdownRemark.edges} />
+					<NavMenu data={headerData} />
 				</SideBar>
 			</Modal>
 			<Container>
@@ -244,7 +246,7 @@ function Header() {
 					</MobileButton>
 				) : (
 					<HeaderOptionsContainer>
-						<NavMenu data={data.allMarkdownRemark.edges} />
+						<NavMenu data={headerData} />
 					</HeaderOptionsContainer>
 				)}
 				<ButtonAssine to="/inscricao">

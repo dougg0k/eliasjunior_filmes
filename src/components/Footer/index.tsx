@@ -1,6 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
+import { StyledIcon } from "styled-icons/types";
 import { COLOR_1, WHITE_COLOR } from "../../utils/colors";
 import { addIconsToItems, normalizeGraphQLData } from "../../utils/helpers";
 import PhotoLogo from "../common/PhotoLogo";
@@ -70,6 +71,12 @@ const FooterTitle = styled.span`
 	padding: 10px 0;
 `;
 
+interface FooterProps {
+	url: string;
+	text: string;
+	icon: StyledIcon;
+}
+
 function Footer() {
 	const data = useStaticQuery(graphql`
 		query FooterQuery {
@@ -98,7 +105,7 @@ function Footer() {
 				<PhotoLogo />
 			</PhotoLogoContainer>
 			<LinksContainer>
-				{footerData.map(({ url, text, icon: Icon }) => {
+				{footerData.map(({ url, text, icon: Icon }: FooterProps) => {
 					const IconStyled = styled(Icon)`
 						height: 35px;
 						width: 35px;

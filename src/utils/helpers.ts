@@ -35,9 +35,13 @@ export function useWindowSize() {
 	return windowSize;
 }
 
-export function getResponsiveIframeSize(width: number) {
-	let responsiveWidth = 700;
-	let responsiveHeight = 400;
+export function getResponsiveIframeSize(
+	width: number,
+	initialWidth = 700,
+	initialHeight = 400,
+) {
+	let responsiveWidth = initialWidth;
+	let responsiveHeight = initialHeight;
 	if (width < 1550) {
 		responsiveWidth = 600;
 		responsiveHeight = 340;
@@ -103,9 +107,10 @@ export function scrollToTop(): void {
 	window.scroll({ top: 0, behavior: "smooth" });
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export function normalizeGraphQLData(
-	arr: Array<{ node: { frontmatter: { text: string; url: string } } }>,
-): Array<{ text: string; url: string }> {
+	arr: [{ node: { frontmatter: {} } }],
+): any[] {
 	return arr.map(item => item.node.frontmatter);
 }
 
