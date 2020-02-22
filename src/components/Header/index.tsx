@@ -1,7 +1,7 @@
 import { graphql, Link, useStaticQuery } from "gatsby";
 import * as React from "react";
 import useModal from "react-hooks-use-modal";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { DownArrowAlt } from "styled-icons/boxicons-regular/DownArrowAlt";
 import { Close } from "styled-icons/material/Close";
 import {
@@ -90,7 +90,7 @@ const SideBar = styled.div`
 `;
 
 const MobileButton = styled.button`
-	margin-right: 30px;
+	margin-right: 230px;
 	background: none;
 	outline: none;
 	border: 2px solid ${WHITE_COLOR};
@@ -106,6 +106,9 @@ const MobileButton = styled.button`
 		background-color: ${WHITE_COLOR};
 		color: ${WHITE_COLOR};
 	}
+	@media (max-width: 550px) {
+		margin-right: 165px;
+	}
 `;
 
 const IconBar = styled.span`
@@ -119,6 +122,24 @@ const CloseIconStyled = styled(Close)`
 	color: ${WHITE_COLOR};
 	height: 30px;
 	width: 30px;
+`;
+
+const iconKeyframe = keyframes`
+	0% {
+		transform: translate(-15px, -7px) rotate(-35deg);
+	}
+	100% {
+		transform: translate(0, 0) rotate(-35deg);
+	}
+`;
+
+const IconStyled = styled(DownArrowAlt)`
+	height: 50px;
+	width: 50px;
+	left: 5px;
+	top: -20px;
+	position: absolute;
+	transform: rotate(-35deg);
 `;
 
 const ButtonAssine = styled(Link)`
@@ -139,15 +160,15 @@ const ButtonAssine = styled(Link)`
 	box-shadow: 0 0 5px ${COLOR_5};
 	display: flex;
 	flex-direction: row;
-`;
-
-const IconStyled = styled(DownArrowAlt)`
-	height: 50px;
-	width: 50px;
-	left: 5px;
-	top: -25px;
-	position: absolute;
-	transform: rotate(-35deg);
+	margin-right: 5px;
+	@media (max-width: 550px) {
+		padding: 10px 15px;
+	}
+	&:hover ${IconStyled} {
+		animation: ${iconKeyframe} 1.2s infinite;
+		animation-timing-function: ease-in-out;
+		animation-fill-mode: forwards;
+	}
 `;
 
 interface NavProps {
@@ -178,21 +199,19 @@ function HeaderLogo() {
 }
 
 function Header() {
-	const [Modal, open, close, isOpen] = useModal("modal-id", true);
+	const [Modal, open, _, isOpen] = useModal("modal-id", true);
 	const { width } = useWindowSize();
-
 	const data = useStaticQuery(graphql`
 		query HeaderQuery {
 			allMarkdownRemark(
 				filter: { frontmatter: { templateKey: { eq: "header" } } }
-				sort: { order: DESC, fields: [frontmatter___createdAt] }
+				sort: { order: ASC, fields: [frontmatter___createdAt] }
 			) {
 				edges {
 					node {
 						frontmatter {
 							title
 							path
-							# date(formatString: "DD/MM/YYYY")
 						}
 					}
 				}
@@ -226,12 +245,12 @@ function Header() {
 				) : (
 					<HeaderOptionsContainer>
 						<NavMenu data={data.allMarkdownRemark.edges} />
-						<ButtonAssine to="/inscricao">
-							<IconStyled />
-							Assinar Conteudo
-						</ButtonAssine>
 					</HeaderOptionsContainer>
 				)}
+				<ButtonAssine to="/inscricao">
+					<IconStyled />
+					Assinar Conteudo
+				</ButtonAssine>
 			</Container>
 		</>
 	);

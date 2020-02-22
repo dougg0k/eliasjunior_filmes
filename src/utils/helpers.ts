@@ -1,4 +1,10 @@
 import { useEffect, useState } from "react";
+import { FacebookSquare } from "styled-icons/boxicons-logos/FacebookSquare";
+import { CameraMovie } from "styled-icons/boxicons-regular/CameraMovie";
+import { Whatsapp } from "styled-icons/fa-brands/Whatsapp";
+import { Vimeo } from "styled-icons/icomoon/Vimeo";
+import { Youtube2 } from "styled-icons/icomoon/Youtube2";
+import { SocialInstagram } from "styled-icons/typicons/SocialInstagram";
 
 export function useWindowSize() {
 	const isClient = typeof window === "object";
@@ -94,4 +100,37 @@ export function getResponsiveIframeSize(width: number) {
 
 export function scrollToTop() {
 	window.scroll({ top: 0, behavior: "smooth" });
+}
+
+export function normalizeGraphQLData(
+	arr: Array<{ node: { frontmatter: { text: string; link: string } } }>,
+): Array<{ text: string; link: string }> {
+	return arr.map(item => item.node.frontmatter);
+}
+
+export function addIconsToItems(arr: Array<{ text: string; link: string }>) {
+	return arr.map(item => {
+		const emptyObj: { icon: any } = { icon: CameraMovie };
+		const formatLink = item.link
+			.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "")
+			.split("/")[0];
+		console.log("PRE-FORMAT = ", item.link);
+		console.log("FORMAT = ", formatLink);
+		if (formatLink.startsWith("youtube")) {
+			emptyObj.icon = Youtube2;
+		}
+		if (formatLink.startsWith("instagram")) {
+			emptyObj.icon = SocialInstagram;
+		}
+		if (formatLink.startsWith("facebook")) {
+			emptyObj.icon = FacebookSquare;
+		}
+		if (formatLink.startsWith("vimeo")) {
+			emptyObj.icon = Vimeo;
+		}
+		if (formatLink.length <= 0) {
+			emptyObj.icon = Whatsapp;
+		}
+		return { ...item, ...emptyObj };
+	});
 }

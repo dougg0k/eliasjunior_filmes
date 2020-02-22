@@ -44,6 +44,12 @@ collections:
         }
       - { label: "Texto", name: "text", widget: "string" }
       - { label: "Link URL", name: "url", widget: "string", required: false }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
+        }
   - label: "Pagina Principal"
     name: "indexPage"
     folder: "static/content/indexPage"
@@ -76,12 +82,24 @@ collections:
           widget: "string",
           required: false,
         }
+      - {
+          label: "Conteudo Gratuito",
+          name: "freeContent",
+          widget: "boolean",
+          default: false,
+        }
       - { label: "Capa", name: "cover", widget: "image" }
       - {
           label: "Foto Adicional",
           name: "additionalPicture",
           widget: "image",
           required: false,
+        }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
         }
   - label: "Documentarios"
     name: "documentarios"
@@ -103,12 +121,24 @@ collections:
           widget: "string",
           required: false,
         }
+      - {
+          label: "Conteudo Gratuito",
+          name: "freeContent",
+          widget: "boolean",
+          default: false,
+        }
       - { label: "Capa", name: "cover", widget: "image" }
       - {
           label: "Foto Adicional",
           name: "additionalPicture",
           widget: "image",
           required: false,
+        }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
         }
   - label: "VideoClipes"
     name: "videoclipes"
@@ -123,6 +153,18 @@ collections:
         }
       - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Link URL", name: "url", widget: "string" }
+      - {
+          label: "Conteudo Gratuito",
+          name: "freeContent",
+          widget: "boolean",
+          default: true,
+        }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
+        }
   - label: "Especiais"
     name: "especiais"
     folder: "static/content/especiais"
@@ -143,12 +185,24 @@ collections:
           widget: "string",
           required: false,
         }
+      - {
+          label: "Conteudo Gratuito",
+          name: "freeContent",
+          widget: "boolean",
+          default: true,
+        }
       - { label: "Capa", name: "cover", widget: "image" }
       - {
           label: "Foto Adicional",
           name: "additionalPicture",
           widget: "image",
           required: false,
+        }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
         }
   - label: "Palestras"
     name: "palestras"
@@ -169,6 +223,18 @@ collections:
           widget: "text",
           required: false,
         }
+      - {
+          label: "Conteudo Gratuito",
+          name: "freeContent",
+          widget: "boolean",
+          default: true,
+        }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
+        }
   - label: "Entrevistas"
     name: "entrevistas"
     folder: "static/content/entrevistas"
@@ -182,6 +248,18 @@ collections:
         }
       - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Link URL", name: "url", widget: "string" }
+      - {
+          label: "Conteudo Gratuito",
+          name: "freeContent",
+          widget: "boolean",
+          default: true,
+        }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
+        }
   - label: "MakingOf"
     name: "makingof"
     folder: "static/content/makingof"
@@ -195,6 +273,18 @@ collections:
         }
       - { label: "Titulo", name: "title", widget: "string" }
       - { label: "Link URL", name: "url", widget: "string" }
+      - {
+          label: "Conteudo Gratuito",
+          name: "freeContent",
+          widget: "boolean",
+          default: true,
+        }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
+        }
   - label: "Cursos"
     name: "cursos"
     folder: "static/content/cursos"
@@ -220,7 +310,19 @@ collections:
           widget: "text",
           required: false,
         }
+      - {
+          label: "Conteudo Gratuito",
+          name: "freeContent",
+          widget: "boolean",
+          default: false,
+        }
       - { label: "Capa", name: "cover", widget: "image" }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
+        }
   - label: "Series"
     name: "series"
     folder: "static/content/series"
@@ -234,12 +336,31 @@ collections:
         }
       - { label: "Titulo", name: "title", widget: "string" }
       - {
+          label: "Conteudo Gratuito",
+          name: "freeContent",
+          widget: "boolean",
+          default: false,
+        }
+      - {
+          label: "Data Cadastro",
+          name: "createdAt",
+          widget: "datetime",
+          format: "DD/MM/YYYY hh:mm:ss",
+        }
+      - {
           label: "Episodios",
           name: "episodios",
           required: true,
           widget: "list",
           fields:
             [
+              {
+                label: "Episodio Nº",
+                name: "id",
+                required: true,
+                widget: "number",
+                valueType: "int",
+              },
               {
                 label: "Titulo",
                 name: "titulo",

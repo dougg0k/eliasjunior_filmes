@@ -4,17 +4,6 @@ import { Vimeo } from "styled-icons/icomoon/Vimeo";
 import { Youtube2 } from "styled-icons/icomoon/Youtube2";
 import { SocialInstagram } from "styled-icons/typicons/SocialInstagram";
 
-export const headerData = [
-	{ title: "Filmes", path: "/filmes" },
-	{ title: "Series", path: "/series" },
-	{ title: "Documentarios", path: "/documentarios" },
-	{ title: "Videoclipes", path: "/videoclipes" },
-	{ title: "Cursos", path: "/cursos" },
-	{ title: "Especiais", path: "/especiais" },
-	{ title: "Entrevistas", path: "/entrevistas" },
-	{ title: "Making Of", path: "/makingof" },
-];
-
 export const footerData = [
 	{
 		text: "Elias Junior",

@@ -1,7 +1,8 @@
+import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import styled from "styled-components";
 import { COLOR_1, WHITE_COLOR } from "../../utils/colors";
-import { footerData } from "../../utils/data";
+import { addIconsToItems, normalizeGraphQLData } from "../../utils/helpers";
 import PhotoLogo from "../common/PhotoLogo";
 
 const Container = styled.footer`
@@ -64,6 +65,26 @@ const AnchorText = styled.span`
 `;
 
 function Footer() {
+	const data = useStaticQuery(graphql`
+		query FooterQuery {
+			allMarkdownRemark(
+				filter: { frontmatter: { templateKey: { eq: "footer" } } }
+				sort: { order: ASC, fields: [frontmatter___createdAt] }
+			) {
+				edges {
+					node {
+						frontmatter {
+							text
+							link
+						}
+					}
+				}
+			}
+		}
+	`);
+	const footerData = addIconsToItems(
+		normalizeGraphQLData(data.allMarkdownRemark.edges),
+	);
 	return (
 		<Container>
 			<PhotoLogoContainer>

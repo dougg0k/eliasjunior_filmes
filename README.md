@@ -2,9 +2,15 @@
 
 <https://eliasjuniorfilmes.com.br/>
 
-All Pages content and possible video in the index page.
+Tecnologias:
 
-TODO:
-Movies e Series adicionar preview com url /titulo_do_filme
+- Gatsby - <https://www.gatsbyjs.org/>
+- Typescript - <https://www.typescriptlang.org/>
+- Netlify-CMS - <https://www.netlifycms.org/>
+
+Hosteamento:
+
+- Github - <http://github.com/>
+- Netlify - <https://www.netlify.com/>
 
 Making Of - http://www.eliasjuniorfilmes.com.br/entrevistas_video.html - Alguns Trabalhos
