@@ -8,9 +8,11 @@ description: >-
   aterrorizaram a cidade na década de 80 e a ação das Rondas Ostensivas Tobias
   de Aguiar (ROTA) no combate a criminalidade, com perseguições, troca de tiros
   e muitas ação.
-link: 'https://vimeo.com/238938272'
+url: 'https://vimeo.com/238938272'
 trailerUrl: 'https://youtu.be/rXcyJwr4yYg'
+freeContent: true
 cover: /assets/rota_comando_capa.jpg
 additionalPicture: /assets/rota_commando_foto_adicional.jpg
+createdAt: '22/02/2020 10:52:29'
 ---
 
