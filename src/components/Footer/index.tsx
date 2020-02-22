@@ -7,7 +7,7 @@ import PhotoLogo from "../common/PhotoLogo";
 
 const Container = styled.footer`
 	width: 100%;
-	height: 280px;
+	height: 300px;
 	background-color: ${COLOR_1};
 	position: relative;
 	bottom: 0;
@@ -64,6 +64,12 @@ const AnchorText = styled.span`
 	margin-left: 5px;
 `;
 
+const FooterTitle = styled.span`
+	color: ${WHITE_COLOR};
+	font-size: 1.2em;
+	padding: 10px 0;
+`;
+
 function Footer() {
 	const data = useStaticQuery(graphql`
 		query FooterQuery {
@@ -87,6 +93,7 @@ function Footer() {
 	);
 	return (
 		<Container>
+			<FooterTitle>Diretor Elias Junior</FooterTitle>
 			<PhotoLogoContainer>
 				<PhotoLogo />
 			</PhotoLogoContainer>
