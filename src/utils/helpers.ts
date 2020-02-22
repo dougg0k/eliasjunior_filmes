@@ -4,6 +4,7 @@ import { CameraMovie } from "styled-icons/boxicons-regular/CameraMovie";
 import { Whatsapp } from "styled-icons/fa-brands/Whatsapp";
 import { Vimeo } from "styled-icons/icomoon/Vimeo";
 import { Youtube2 } from "styled-icons/icomoon/Youtube2";
+import { StyledIcon } from "styled-icons/types";
 import { SocialInstagram } from "styled-icons/typicons/SocialInstagram";
 
 export function useWindowSize() {
@@ -98,24 +99,22 @@ export function getResponsiveIframeSize(width: number) {
 	return { responsiveWidth, responsiveHeight };
 }
 
-export function scrollToTop() {
+export function scrollToTop(): void {
 	window.scroll({ top: 0, behavior: "smooth" });
 }
 
 export function normalizeGraphQLData(
-	arr: Array<{ node: { frontmatter: { text: string; link: string } } }>,
-): Array<{ text: string; link: string }> {
+	arr: Array<{ node: { frontmatter: { text: string; url: string } } }>,
+): Array<{ text: string; url: string }> {
 	return arr.map(item => item.node.frontmatter);
 }
 
-export function addIconsToItems(arr: Array<{ text: string; link: string }>) {
+export function addIconsToItems(arr: Array<{ text: string; url: string }>) {
 	return arr.map(item => {
-		const emptyObj: { icon: any } = { icon: CameraMovie };
-		const formatLink = item.link
-			.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "")
-			.split("/")[0];
-		console.log("PRE-FORMAT = ", item.link);
-		console.log("FORMAT = ", formatLink);
+		const emptyObj: { icon: StyledIcon } = { icon: CameraMovie };
+		const formatLink = item.url
+			? item.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split("/")[0]
+			: "";
 		if (formatLink.startsWith("youtube")) {
 			emptyObj.icon = Youtube2;
 		}
@@ -128,7 +127,7 @@ export function addIconsToItems(arr: Array<{ text: string; link: string }>) {
 		if (formatLink.startsWith("vimeo")) {
 			emptyObj.icon = Vimeo;
 		}
-		if (formatLink.length <= 0) {
+		if (!item.url || item.url.length <= 0) {
 			emptyObj.icon = Whatsapp;
 		}
 		return { ...item, ...emptyObj };

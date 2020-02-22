@@ -75,7 +75,7 @@ function Footer() {
 					node {
 						frontmatter {
 							text
-							link
+							url
 						}
 					}
 				}
@@ -91,7 +91,7 @@ function Footer() {
 				<PhotoLogo />
 			</PhotoLogoContainer>
 			<LinksContainer>
-				{footerData.map(({ link, text, icon: Icon }) => {
+				{footerData.map(({ url, text, icon: Icon }) => {
 					const IconStyled = styled(Icon)`
 						height: 35px;
 						width: 35px;
@@ -99,11 +99,11 @@ function Footer() {
 					return (
 						<Anchor
 							key={text}
-							href={link}
+							href={url}
 							target="_blank"
 							rel="noreferrer"
 							aria-label={text}
-							disabled={!link || link.length === 0}
+							disabled={!url || url.length === 0}
 						>
 							<IconStyled />
 							<AnchorText>{text}</AnchorText>
