@@ -26,7 +26,7 @@ const Container = styled.footer`
 const PhotoLogoContainer = styled.div`
 	width: 120px;
 	height: auto;
-	margin-bottom: 30px;
+	margin-bottom: 20px;
 `;
 
 const LinksContainer = styled.div`
