@@ -54,6 +54,7 @@ collections:
     name: "indexPage"
     folder: "static/content/indexPage"
     create: false
+    delete: false
     fields:
       - {
           label: "Template Key",
@@ -61,7 +62,7 @@ collections:
           widget: "hidden",
           default: "indexPage",
         }
-      - { label: "Video Link URL", name: "videoUrl", widget: "string" }
+      - { label: "Vimeo Link URL", name: "videoUrl", widget: "string" }
   - label: "Filmes"
     name: "filmes"
     folder: "static/content/filmes"
