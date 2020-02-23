@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { COLOR_5 } from "../../utils/colors";
+import { removeProtocolAndDomainFromUrl } from "../../utils/helpers";
 import VideoPlayer from "./VideoPlayer";
 
 const CommonVideoContainer = styled.div`
@@ -38,17 +39,22 @@ interface Props {
 function CommonVideos({ videos }: Props) {
 	return (
 		<CommonVideoContainer>
-			{videos.map(item => (
-				<CommonVideoItem key={item.url}>
-					<CommonVideoTitle>{item.title}</CommonVideoTitle>
-					<VideoPlayer
-						isYoutube
-						youtubeUrl={item.url}
-						initialWidth={426}
-						initialHeight={240}
-					/>
-				</CommonVideoItem>
-			))}
+			{videos.map(item => {
+				const formattedUrl = removeProtocolAndDomainFromUrl(item.url);
+				const isYoutubeMain = formattedUrl.startsWith("youtube");
+				return (
+					<CommonVideoItem key={item.url}>
+						<CommonVideoTitle>{item.title}</CommonVideoTitle>
+						<VideoPlayer
+							isYoutube={isYoutubeMain}
+							youtubeUrl={item.url}
+							vimeoUrl={item.url}
+							initialWidth={426}
+							initialHeight={240}
+						/>
+					</CommonVideoItem>
+				);
+			})}
 		</CommonVideoContainer>
 	);
 }
