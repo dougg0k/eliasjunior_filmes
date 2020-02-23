@@ -11,6 +11,7 @@ const CommonVideoContainer = styled.div`
 	padding: 50px;
 	padding-top: 20px;
 	justify-content: center;
+	align-items: center;
 `;
 
 const CommonVideoItem = styled.div`
@@ -43,7 +44,7 @@ function CommonVideos({ videos }: Props) {
 				const formattedUrl = removeProtocolAndDomainFromUrl(item.url);
 				const isYoutubeMain = formattedUrl.startsWith("youtube");
 				return (
-					<CommonVideoItem key={item.url}>
+					<CommonVideoItem key={item.title}>
 						<CommonVideoTitle>{item.title}</CommonVideoTitle>
 						<VideoPlayer
 							isYoutube={isYoutubeMain}

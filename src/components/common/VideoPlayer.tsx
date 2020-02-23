@@ -35,7 +35,9 @@ const VimeoPlayerStyled = styled(Vimeo)`
 	display: flex;
 `;
 
-const YoutubePlayerStyled = styled(YouTube)``;
+const YoutubePlayerStyled = styled(YouTube)`
+	display: flex;
+`;
 
 interface Props {
 	vimeoUrl?: string;
