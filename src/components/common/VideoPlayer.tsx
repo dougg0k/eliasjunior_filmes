@@ -60,17 +60,22 @@ function VideoPlayer({
 	);
 	const formattedUrl = removeProtocolAndDomainFromUrl(vimeoUrl || "");
 	const isYoutubeMain = formattedUrl.startsWith("youtube");
-	const youtubeFinalUrl = isYoutubeMain
-		? getYoutubeIdFromUrl(vimeoUrl || "")
-		: getYoutubeIdFromUrl(youtubeUrl || "");
 	return (
 		<PlayerContainer
 			responsiveWidth={responsiveWidth}
 			responsiveHeight={responsiveHeight}
 		>
-			{isYoutube || isYoutubeMain ? (
+			{isYoutube ? (
 				<YoutubePlayerStyled
-					video={youtubeFinalUrl}
+					video={getYoutubeIdFromUrl(youtubeUrl || "")}
+					width={responsiveWidth}
+					height={responsiveHeight}
+					showRelatedVideos={false}
+					showInfo={false}
+				/>
+			) : isYoutubeMain ? (
+				<YoutubePlayerStyled
+					video={getYoutubeIdFromUrl(vimeoUrl || "")}
 					width={responsiveWidth}
 					height={responsiveHeight}
 					showRelatedVideos={false}

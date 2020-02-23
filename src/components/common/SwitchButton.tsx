@@ -12,7 +12,7 @@ interface SwitchButtonProps {
 const SwitchButtonStyled = styled.button`
 	outline: none;
 	border: none;
-	position: absolute;
+	position: relative;
 	right: 0;
 	background-color: ${WHITE_COLOR};
 	color: ${(props: SwitchButtonProps) => (props.isAlt ? COLOR_8 : COLOR_9)};
@@ -25,6 +25,7 @@ const SwitchButtonStyled = styled.button`
 	display: flex;
 	flex-direction: row;
 	align-items: center;
+	margin-bottom: 15px;
 	&:hover {
 		cursor: pointer;
 		background-color: ${(props: SwitchButtonProps) =>
@@ -32,8 +33,6 @@ const SwitchButtonStyled = styled.button`
 		color: ${WHITE_COLOR};
 	}
 	@media (max-width: 768px) {
-		position: relative;
-		margin-bottom: 10px;
 		font-size: 1.2em;
 	}
 `;

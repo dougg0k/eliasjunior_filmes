@@ -2,6 +2,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
 import CommonVideos from "../components/common/CommonVideos";
 import Container from "../components/common/Container";
+import Title from "../components/common/Title";
 import SEO from "../components/utils/Seo";
 import { normalizeGraphQLData } from "../utils/helpers";
 
@@ -27,7 +28,8 @@ function VideoClipesPage() {
 	return (
 		<Container>
 			<SEO title="Videoclipes" />
-			<CommonVideos videos={videoclipes} />
+			<Title>Videoclipes</Title>
+			<CommonVideos videos={videoclipes} title="Videoclipes" />
 		</Container>
 	);
 }

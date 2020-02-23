@@ -1,13 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
-import { COLOR_1 } from "../../utils/colors";
-
-const Title = styled.h1`
-	color: ${COLOR_1};
-	text-align: center;
-	padding-top: 20px;
-	text-decoration: underline;
-`;
+import Title from "./Title";
 
 const MoviesContainers = styled.div`
 	display: flex;
@@ -24,6 +17,8 @@ const MovieItem = styled.button`
 	background: none;
 	padding: 0;
 	transform: perspective(100) rotateY(-2.5deg);
+	margin-right: 15px;
+	margin-bottom: 25px;
 	&:hover {
 		cursor: pointer;
 		transform: none;

@@ -42,14 +42,11 @@ const InformationContainer = styled.div`
 
 const TopInformation = styled.div`
 	display: flex;
-	flex-direction: row;
+	flex-direction: column-reverse;
 	position: relative;
 	justify-content: center;
 	align-items: center;
 	width: 700px;
-	@media (max-width: 768px) {
-		flex-direction: column-reverse;
-	}
 `;
 
 interface Props {
@@ -76,11 +73,11 @@ function VideoInformation({
 				{hideButton &&
 					(isTrailer ? (
 						<SwitchButton onClick={firstOnClick} isAlt={isTrailer}>
-							Assistir Filme
+							Assistir o Filme
 						</SwitchButton>
 					) : (
 						<SwitchButton onClick={secondOnClick} isAlt={isTrailer}>
-							Assistir Trailer
+							Assistir o Trailer
 						</SwitchButton>
 					))}
 			</TopInformation>

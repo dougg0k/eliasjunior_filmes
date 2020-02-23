@@ -8,6 +8,7 @@ const CommonVideoContainer = styled.div`
 	flex-direction: row;
 	flex-wrap: wrap;
 	padding: 50px;
+	padding-top: 20px;
 	justify-content: center;
 `;
 
