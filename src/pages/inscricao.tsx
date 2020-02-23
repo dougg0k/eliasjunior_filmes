@@ -2,16 +2,12 @@ import * as React from "react";
 import styled from "styled-components";
 import BancoDoBrasilLogo from "../components/common/BancoDoBrasilLogo";
 import BradescoLogo from "../components/common/BradescoLogo";
+import Container from "../components/common/Container";
 import SEO from "../components/utils/Seo";
 import { COLOR_1, COLOR_3, COLOR_6, COLOR_7 } from "../utils/colors";
-import { HEADER_HEIGHT } from "../utils/constants";
 
-const Container = styled.div`
-	width: 100%;
-	position: relative;
-	margin-top: ${HEADER_HEIGHT}px;
+const ContainerStyled = styled(Container)`
 	background-color: ${COLOR_3};
-	padding-bottom: 50px;
 `;
 
 const Title = styled.h1`
@@ -145,7 +141,7 @@ const AvisoText = styled.p`
 
 function InscricaoPage() {
 	return (
-		<Container>
+		<ContainerStyled>
 			<SEO title="Inscrição" />
 			<TitlesContainer>
 				<Title>Formas de pagamento</Title>
@@ -250,7 +246,7 @@ function InscricaoPage() {
 					</TextPosfix>
 				</TextLine>
 			</AvisoContainer>
-		</Container>
+		</ContainerStyled>
 	);
 }
 

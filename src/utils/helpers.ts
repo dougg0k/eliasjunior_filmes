@@ -114,12 +114,14 @@ export function normalizeGraphQLData(
 	return arr.map(item => item.node.frontmatter);
 }
 
+export function removeProtocolAndDomainFromUrl(url: string) {
+	return url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split("/")[0];
+}
+
 export function addIconsToItems(arr: Array<{ text: string; url: string }>) {
 	return arr.map(item => {
 		const emptyObj: { icon: StyledIcon } = { icon: CameraMovie };
-		const formatLink = item.url
-			? item.url.replace(/^(?:https?:\/\/)?(?:www\.)?/i, "").split("/")[0]
-			: "";
+		const formatLink = item.url ? removeProtocolAndDomainFromUrl(item.url) : "";
 		if (formatLink.startsWith("youtube")) {
 			emptyObj.icon = Youtube2;
 		}

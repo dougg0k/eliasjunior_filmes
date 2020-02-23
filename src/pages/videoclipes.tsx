@@ -1,13 +1,33 @@
+import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
-import styled from "styled-components";
+import CommonVideos from "../components/common/CommonVideos";
+import Container from "../components/common/Container";
 import SEO from "../components/utils/Seo";
-
-const Container = styled.div``;
+import { normalizeGraphQLData } from "../utils/helpers";
 
 function VideoClipesPage() {
+	const data = useStaticQuery(graphql`
+		query VideoClipesQuery {
+			allMarkdownRemark(
+				filter: { frontmatter: { templateKey: { eq: "videoclipes" } } }
+				sort: { order: DESC, fields: [frontmatter___createdAt] }
+			) {
+				edges {
+					node {
+						frontmatter {
+							title
+							url
+						}
+					}
+				}
+			}
+		}
+	`);
+	const videoclipes = normalizeGraphQLData(data.allMarkdownRemark.edges);
 	return (
 		<Container>
 			<SEO title="Videoclipes" />
+			<CommonVideos videos={videoclipes} />
 		</Container>
 	);
 }

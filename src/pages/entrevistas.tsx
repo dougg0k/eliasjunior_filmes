@@ -1,8 +1,6 @@
 import * as React from "react";
-import styled from "styled-components";
+import Container from "../components/common/Container";
 import SEO from "../components/utils/Seo";
-
-const Container = styled.div``;
 
 function EntrevistasPage() {
 	return (

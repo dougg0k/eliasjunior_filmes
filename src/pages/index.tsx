@@ -1,8 +1,7 @@
 import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
-import styled from "styled-components";
+import Container from "../components/common/Container";
 import HeroSection from "../components/HeroSection";
-const Container = styled.div``;
 
 function IndexPage() {
 	const data = useStaticQuery(graphql`

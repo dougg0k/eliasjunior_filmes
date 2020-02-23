@@ -6,6 +6,7 @@ import { COLOR_1 } from "../../utils/colors";
 import {
 	getResponsiveIframeSize,
 	getYoutubeIdFromUrl,
+	removeProtocolAndDomainFromUrl,
 	useWindowSize,
 } from "../../utils/helpers";
 
@@ -40,23 +41,36 @@ interface Props {
 	vimeoUrl?: string;
 	youtubeUrl?: string;
 	isYoutube: boolean;
+	initialWidth?: number;
+	initialHeight?: number;
 }
 
-function VideoPlayer({ vimeoUrl, youtubeUrl, isYoutube }: Props) {
+function VideoPlayer({
+	vimeoUrl,
+	youtubeUrl,
+	isYoutube,
+	initialWidth,
+	initialHeight,
+}: Props) {
 	const { width } = useWindowSize();
 	const { responsiveHeight, responsiveWidth } = getResponsiveIframeSize(
 		width || 0,
-		700,
-		400,
+		initialWidth || 700,
+		initialHeight || 400,
 	);
+	const formattedUrl = removeProtocolAndDomainFromUrl(vimeoUrl || "");
+	const isYoutubeMain = formattedUrl.startsWith("youtube");
+	const youtubeFinalUrl = isYoutubeMain
+		? getYoutubeIdFromUrl(vimeoUrl || "")
+		: getYoutubeIdFromUrl(youtubeUrl || "");
 	return (
 		<PlayerContainer
 			responsiveWidth={responsiveWidth}
 			responsiveHeight={responsiveHeight}
 		>
-			{isYoutube ? (
+			{isYoutube || isYoutubeMain ? (
 				<YoutubePlayerStyled
-					video={getYoutubeIdFromUrl(youtubeUrl || "")}
+					video={youtubeFinalUrl}
 					width={responsiveWidth}
 					height={responsiveHeight}
 					showRelatedVideos={false}

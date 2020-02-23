@@ -1,24 +1,33 @@
+import { graphql, useStaticQuery } from "gatsby";
 import * as React from "react";
-import styled from "styled-components";
+import CommonVideos from "../components/common/CommonVideos";
+import Container from "../components/common/Container";
 import SEO from "../components/utils/Seo";
-import { COLOR_3 } from "../utils/colors";
-import { HEADER_HEIGHT } from "../utils/constants";
-
-const Container = styled.div`
-	width: 100%;
-	position: relative;
-	margin-top: ${HEADER_HEIGHT}px;
-	background-color: ${COLOR_3};
-	height: 80vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-`;
+import { normalizeGraphQLData } from "../utils/helpers";
 
 function MakingOfPage() {
+	const data = useStaticQuery(graphql`
+		query MakingOfQuery {
+			allMarkdownRemark(
+				filter: { frontmatter: { templateKey: { eq: "makingof" } } }
+				sort: { order: DESC, fields: [frontmatter___createdAt] }
+			) {
+				edges {
+					node {
+						frontmatter {
+							title
+							url
+						}
+					}
+				}
+			}
+		}
+	`);
+	const makingOf = normalizeGraphQLData(data.allMarkdownRemark.edges);
 	return (
 		<Container>
 			<SEO title="Making Of" />
+			<CommonVideos videos={makingOf} />
 		</Container>
 	);
 }
