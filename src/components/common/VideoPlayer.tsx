@@ -88,6 +88,8 @@ function VideoPlayer({
 					video={vimeoUrl}
 					width={responsiveWidth}
 					height={responsiveHeight}
+					showTitle={false}
+					showByline={false}
 				/>
 			)}
 		</PlayerContainer>

@@ -1,5 +1,6 @@
 import React, { Dispatch, SetStateAction } from "react";
 import styled from "styled-components";
+import { COLOR_1, COLOR_8 } from "../../utils/colors";
 import Title from "./Title";
 
 const MoviesContainers = styled.div`
@@ -11,14 +12,21 @@ const MoviesContainers = styled.div`
 	align-items: center;
 `;
 
+interface MovieItemProps {
+	isSelected: boolean;
+}
+
 const MovieItem = styled.button`
 	outline: none;
 	border: 0;
 	background: none;
 	padding: 0;
-	transform: perspective(100) rotateY(-2.5deg);
+	transform: ${(props: MovieItemProps) =>
+		props.isSelected ? "none" : "perspective(100) rotateY(-2.5deg)"};
 	margin-right: 15px;
 	margin-bottom: 25px;
+	border: ${(props: MovieItemProps) =>
+		props.isSelected ? `4px solid ${COLOR_8}` : `1px solid ${COLOR_1}`};
 	&:hover {
 		cursor: pointer;
 		transform: none;
@@ -34,6 +42,7 @@ interface Props {
 	videosMainTitle: string;
 	videos: Array<FilmeProps>;
 	onClick: Dispatch<SetStateAction<T | null>>;
+	selectedItem: {} | null;
 }
 
 export interface FilmeProps {
@@ -45,13 +54,21 @@ export interface FilmeProps {
 	description: string;
 }
 
-function Videos({ videos, videosMainTitle, onClick }: Props) {
+function Videos({ videos, videosMainTitle, onClick, selectedItem }: Props) {
 	return (
 		<>
 			<Title>{videosMainTitle}</Title>
 			<MoviesContainers>
 				{videos.map((item: FilmeProps) => (
-					<MovieItem key={item.title} onClick={onClick.bind(null, item)}>
+					<MovieItem
+						isSelected={item === selectedItem}
+						key={item.title}
+						onClick={
+							!selectedItem || selectedItem !== item
+								? onClick.bind(null, item)
+								: onClick.bind(null, null)
+						}
+					>
 						<MovieCover src={item.cover} alt={item.title} />
 					</MovieItem>
 				))}

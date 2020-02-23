@@ -19,13 +19,16 @@ const CommonVideoItem = styled.div`
 	flex-direction: column;
 	align-items: center;
 	margin: 20px;
+	width: 430px;
 `;
 
 const CommonVideoTitle = styled.span`
 	font-size: 1.1em;
 	font-weight: 600;
 	color: ${COLOR_5};
-	margin-bottom: -5px;
+	margin-bottom: -15px;
+	height: 40px;
+	text-align: center;
 `;
 
 export interface CommonVideoProps {

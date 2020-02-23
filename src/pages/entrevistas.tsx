@@ -11,7 +11,7 @@ function EntrevistasPage() {
 		query EntrevistasQuery {
 			allMarkdownRemark(
 				filter: { frontmatter: { templateKey: { eq: "entrevistas" } } }
-				sort: { order: DESC, fields: [frontmatter___createdAt] }
+				sort: { order: ASC, fields: [frontmatter___createdAt] }
 			) {
 				edges {
 					node {

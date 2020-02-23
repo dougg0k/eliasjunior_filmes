@@ -64,6 +64,7 @@ function FilmesPage() {
 				videosMainTitle="Filmes"
 				videos={movies}
 				onClick={setSelectedMovie}
+				selectedItem={selectedMovie}
 			/>
 		</Container>
 	);

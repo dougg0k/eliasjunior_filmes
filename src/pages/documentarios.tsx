@@ -67,6 +67,7 @@ function DocumentariosPage() {
 				videosMainTitle="Documentarios"
 				videos={documentarios}
 				onClick={setSelectedDocumentario}
+				selectedItem={selectedDocumentario}
 			/>
 		</Container>
 	);

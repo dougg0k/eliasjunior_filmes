@@ -64,6 +64,7 @@ function CursosPage() {
 				videosMainTitle="Cursos"
 				videos={cursos}
 				onClick={setSelectedCurso}
+				selectedItem={selectedCurso}
 			/>
 		</Container>
 	);
