@@ -37,11 +37,11 @@ const MovieCover = styled.img`
 
 interface Props {
 	videosMainTitle: string;
-	videos: Array<FilmesProps>;
+	videos: Array<FilmeProps>;
 	onClick: Dispatch<SetStateAction<T | null>>;
 }
 
-export interface FilmesProps {
+export interface FilmeProps {
 	title: string;
 	url: string;
 	additionalPicture?: string;
@@ -55,7 +55,7 @@ function Videos({ videos, videosMainTitle, onClick }: Props) {
 		<>
 			<Title>{videosMainTitle}</Title>
 			<MoviesContainers>
-				{videos.map((item: FilmesProps) => (
+				{videos.map((item: FilmeProps) => (
 					<MovieItem key={item.title} onClick={onClick.bind(null, item)}>
 						<MovieCover src={item.cover} alt={item.title} />
 					</MovieItem>

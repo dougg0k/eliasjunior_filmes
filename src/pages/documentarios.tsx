@@ -4,7 +4,7 @@ import styled from "styled-components";
 import VideoContainer from "../components/common/VideoContainer";
 import VideoInformation from "../components/common/VideoInformation";
 import VideoPlayer from "../components/common/VideoPlayer";
-import Videos, { FilmesProps } from "../components/common/Videos";
+import Videos, { FilmeProps } from "../components/common/Videos";
 import SEO from "../components/utils/Seo";
 import { HEADER_HEIGHT } from "../utils/constants";
 import { normalizeGraphQLData } from "../utils/helpers";
@@ -21,7 +21,7 @@ function DocumentariosPage() {
 	const [
 		selectedDocumentario,
 		setSelectedDocumentario,
-	] = React.useState<FilmesProps | null>(null);
+	] = React.useState<FilmeProps | null>(null);
 	const [isTrailer, setIsTrailer] = React.useState<boolean>(true);
 	const data = useStaticQuery(graphql`
 		query DocumentariosQuery {
@@ -44,7 +44,7 @@ function DocumentariosPage() {
 			}
 		}
 	`);
-	const movies = normalizeGraphQLData(data.allMarkdownRemark.edges);
+	const documentarios = normalizeGraphQLData(data.allMarkdownRemark.edges);
 	return (
 		<Container>
 			<SEO title="Documentarios" />
@@ -72,7 +72,7 @@ function DocumentariosPage() {
 			)}
 			<Videos
 				videosMainTitle="Documentarios"
-				videos={movies}
+				videos={documentarios}
 				onClick={setSelectedDocumentario}
 			/>
 		</Container>

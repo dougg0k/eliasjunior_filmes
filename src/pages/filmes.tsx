@@ -4,7 +4,7 @@ import styled from "styled-components";
 import VideoContainer from "../components/common/VideoContainer";
 import VideoInformation from "../components/common/VideoInformation";
 import VideoPlayer from "../components/common/VideoPlayer";
-import Videos, { FilmesProps } from "../components/common/Videos";
+import Videos, { FilmeProps } from "../components/common/Videos";
 import SEO from "../components/utils/Seo";
 import { HEADER_HEIGHT } from "../utils/constants";
 import { normalizeGraphQLData } from "../utils/helpers";
@@ -18,7 +18,7 @@ const Container = styled.div`
 `;
 
 function FilmesPage() {
-	const [selectedMovie, setSelectedMovie] = React.useState<FilmesProps | null>(
+	const [selectedMovie, setSelectedMovie] = React.useState<FilmeProps | null>(
 		null,
 	);
 	const [isTrailer, setIsTrailer] = React.useState<boolean>(true);
