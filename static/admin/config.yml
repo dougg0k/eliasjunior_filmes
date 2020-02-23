@@ -165,45 +165,6 @@ collections:
           widget: "datetime",
           format: "DD/MM/YYYY hh:mm:ss",
         }
-  - label: "Especiais"
-    name: "especiais"
-    folder: "static/content/especiais"
-    create: true
-    fields:
-      - {
-          label: "Template Key",
-          name: "templateKey",
-          widget: "hidden",
-          default: "especiais",
-        }
-      - { label: "Titulo", name: "title", widget: "string" }
-      - { label: "Descricao", name: "description", widget: "text" }
-      - { label: "Link URL", name: "url", widget: "string" }
-      - {
-          label: "Trailer URL",
-          name: "trailerUrl",
-          widget: "string",
-          required: false,
-        }
-      - {
-          label: "Conteudo Gratuito",
-          name: "freeContent",
-          widget: "boolean",
-          default: true,
-        }
-      - { label: "Capa", name: "cover", widget: "image" }
-      - {
-          label: "Foto Adicional",
-          name: "additionalPicture",
-          widget: "image",
-          required: false,
-        }
-      - {
-          label: "Data Cadastro",
-          name: "createdAt",
-          widget: "datetime",
-          format: "DD/MM/YYYY hh:mm:ss",
-        }
   - label: "Palestras"
     name: "palestras"
     folder: "static/content/palestras"
