@@ -200,6 +200,9 @@ function HeroSection({ videoUrl = "" }: Props) {
 					video={videoUrl}
 					width={responsiveWidth}
 					height={responsiveHeight}
+					showTitle={false}
+					showByline={false}
+					showPortrait={false}
 				/>
 			</IframeContainer>
 		</Container>
