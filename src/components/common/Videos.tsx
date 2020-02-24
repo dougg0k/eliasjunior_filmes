@@ -25,8 +25,9 @@ const MovieItem = styled.button`
 		props.isSelected ? "none" : "perspective(100) rotateY(-2.5deg)"};
 	margin-right: 15px;
 	margin-bottom: 25px;
+	box-shadow: 0 0 5px ${COLOR_1};
 	border: ${(props: MovieItemProps) =>
-		props.isSelected ? `4px solid ${COLOR_8}` : `1px solid ${COLOR_1}`};
+		props.isSelected ? `3px solid ${COLOR_8}` : `0px solid ${COLOR_1}`};
 	&:hover {
 		cursor: pointer;
 		transform: none;
@@ -34,7 +35,7 @@ const MovieItem = styled.button`
 `;
 
 const MovieCover = styled.img`
-	width: 220px;
+	width: 200px;
 	display: block;
 `;
 

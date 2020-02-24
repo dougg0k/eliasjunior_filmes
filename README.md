@@ -15,4 +15,3 @@ Hosteamento:
 
 Fazer Series e adicionar.
 Falta fazer as paginas de conteudo de assinantes e nao assinantes.
-Em documentarios adicionar opcao de deselecionar um item se clicar no mesmo.
