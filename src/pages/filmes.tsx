@@ -55,7 +55,7 @@ function FilmesPage() {
 							firstOnClick={setIsTrailer.bind(null, false)}
 							secondOnClick={setIsTrailer.bind(null, true)}
 							isTrailer={isTrailer}
-							hideButton={!!selectedMovie.trailerUrl}
+							showButton={!!selectedMovie.trailerUrl}
 						/>
 					</>
 				</VideoContainer>

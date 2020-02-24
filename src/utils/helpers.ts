@@ -155,3 +155,14 @@ export function getYoutubeIdFromUrl(url: string) {
 export function getCurrentPath(): string {
 	return typeof window !== "undefined" ? window.location.href : "";
 }
+
+export function transformStrIntoCamelCase(str: string) {
+	return str
+		.replace(/\s(.)/g, function(t: string) {
+			return t.toUpperCase();
+		})
+		.replace(/\s/g, "")
+		.replace(/^(.)/, function(t: string) {
+			return t.toLowerCase();
+		});
+}

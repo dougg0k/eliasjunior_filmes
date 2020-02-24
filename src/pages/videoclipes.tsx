@@ -29,7 +29,7 @@ function VideoClipesPage() {
 		<Container>
 			<SEO title="Videoclipes" />
 			<Title>Videoclipes</Title>
-			<CommonVideos videos={videoclipes} title="Videoclipes" />
+			<CommonVideos videos={videoclipes} />
 		</Container>
 	);
 }

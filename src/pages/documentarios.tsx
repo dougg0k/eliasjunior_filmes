@@ -56,9 +56,7 @@ function DocumentariosPage() {
 							firstOnClick={setIsTrailer.bind(null, false)}
 							secondOnClick={setIsTrailer.bind(null, true)}
 							isTrailer={isTrailer}
-							hideButton={
-								!!selectedDocumentario.trailerUrl || !!selectedDocumentario.url
-							}
+							showButton={!!selectedDocumentario.trailerUrl}
 						/>
 					</>
 				</VideoContainer>

@@ -4,11 +4,7 @@ import BancoDoBrasilLogo from "../components/common/BancoDoBrasilLogo";
 import BradescoLogo from "../components/common/BradescoLogo";
 import Container from "../components/common/Container";
 import SEO from "../components/utils/Seo";
-import { COLOR_1, COLOR_3, COLOR_6, COLOR_7 } from "../utils/colors";
-
-const ContainerStyled = styled(Container)`
-	background-color: ${COLOR_3};
-`;
+import { COLOR_1, COLOR_6, COLOR_7 } from "../utils/colors";
 
 const Title = styled.h1`
 	font-weight: 600;
@@ -118,6 +114,7 @@ const LogoContainer = styled.div`
 
 const AvisoContainer = styled.div`
 	margin-top: 25px;
+	margin-bottom: 50px;
 	width: 100%;
 	display: flex;
 	justify-content: center;
@@ -141,7 +138,7 @@ const AvisoText = styled.p`
 
 function InscricaoPage() {
 	return (
-		<ContainerStyled>
+		<Container>
 			<SEO title="Inscrição" />
 			<TitlesContainer>
 				<Title>Formas de pagamento</Title>
@@ -246,7 +243,7 @@ function InscricaoPage() {
 					</TextPosfix>
 				</TextLine>
 			</AvisoContainer>
-		</ContainerStyled>
+		</Container>
 	);
 }
 

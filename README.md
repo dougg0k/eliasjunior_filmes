@@ -12,6 +12,3 @@ Hosteamento:
 
 - Github - <http://github.com/>
 - Netlify - <https://www.netlify.com/>
-
-Fazer pagina Series.
-Apos finalizar series, fazer tests SEO, accessibilidade e performance e ajustar o necessario. E fix lint issues.

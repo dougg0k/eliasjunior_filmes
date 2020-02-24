@@ -52,11 +52,11 @@ const TopInformation = styled.div`
 
 interface Props {
 	title: string;
-	description: string;
+	description?: string;
 	firstOnClick: () => void;
 	secondOnClick: () => void;
 	isTrailer: boolean;
-	hideButton?: boolean;
+	showButton?: boolean;
 }
 
 function VideoInformation({
@@ -65,13 +65,13 @@ function VideoInformation({
 	firstOnClick,
 	secondOnClick,
 	isTrailer,
-	hideButton = false,
+	showButton = true,
 }: Props) {
 	return (
 		<InformationContainer>
 			<TopInformation>
 				<Title>{title}</Title>
-				{hideButton &&
+				{showButton &&
 					(isTrailer ? (
 						<SwitchButton onClick={firstOnClick} isAlt={isTrailer}>
 							Assistir ao Filme
