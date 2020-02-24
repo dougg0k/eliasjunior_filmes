@@ -13,5 +13,5 @@ Hosteamento:
 - Github - <http://github.com/>
 - Netlify - <https://www.netlify.com/>
 
-Fazer Series e adicionar.
+Fazer pagina Series.
 Falta fazer as paginas de conteudo de assinantes e nao assinantes.
