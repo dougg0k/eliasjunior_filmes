@@ -14,4 +14,4 @@ Hosteamento:
 - Netlify - <https://www.netlify.com/>
 
 Fazer pagina Series.
-Falta fazer as paginas de conteudo de assinantes e nao assinantes.
+Apos finalizar series, fazer tests SEO, accessibilidade e performance e ajustar o necessario. E fix lint issues.

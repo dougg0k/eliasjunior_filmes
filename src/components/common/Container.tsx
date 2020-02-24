@@ -6,8 +6,7 @@ const ContainerStyled = styled.div`
 	width: 100%;
 	position: relative;
 	margin-top: ${HEADER_HEIGHT}px;
-	padding-bottom: 50px;
-	min-height: 60vh;
+	min-height: 65vh;
 `;
 
 interface Props {

@@ -90,6 +90,7 @@ function VideoPlayer({
 					height={responsiveHeight}
 					showTitle={false}
 					showByline={false}
+					showPortrait={false}
 				/>
 			)}
 		</PlayerContainer>

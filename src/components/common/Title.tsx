@@ -7,6 +7,7 @@ const TitleStyled = styled.h1`
 	text-align: center;
 	padding-top: 25px;
 	text-decoration: underline;
+	font-size: 1.8em;
 `;
 
 interface Props {

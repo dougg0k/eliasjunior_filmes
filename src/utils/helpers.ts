@@ -151,3 +151,7 @@ export function getYoutubeIdFromUrl(url: string) {
 		return a;
 	}
 }
+
+export function getCurrentPath(): string {
+	return typeof window !== "undefined" ? window.location.href : "";
+}

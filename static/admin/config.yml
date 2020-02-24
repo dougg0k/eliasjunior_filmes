@@ -311,7 +311,7 @@ collections:
         }
       - {
           label: "Episodios",
-          name: "episodios",
+          name: "episodes",
           required: true,
           widget: "list",
           fields:
@@ -325,11 +325,11 @@ collections:
               },
               {
                 label: "Titulo",
-                name: "titulo",
+                name: "title",
                 required: true,
                 widget: "string",
               },
-              { label: "Descricao", name: "descricao", widget: "text" },
+              { label: "Descricao", name: "description", widget: "text" },
               { label: "Link URL", name: "url", widget: "string" },
               {
                 label: "Trailer URL",

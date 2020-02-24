@@ -5,9 +5,9 @@ import Typical from "react-typical";
 import styled from "styled-components";
 import { COLOR_1, COLOR_3, WHITE_COLOR } from "../../utils/colors";
 import { HEADER_HEIGHT } from "../../utils/constants";
-import { getResponsiveIframeSize, useWindowSize } from "../../utils/helpers";
 import AssineButton from "../common/AssineButton";
 import MainPhoto from "../common/MainPhoto";
+import VideoPlayer from "../common/VideoPlayer";
 
 const Container = styled.div`
 	width: 100%;
@@ -162,10 +162,6 @@ interface Props {
 }
 
 function HeroSection({ videoUrl = "" }: Props) {
-	const { width } = useWindowSize();
-	const { responsiveHeight, responsiveWidth } = getResponsiveIframeSize(
-		width || 0,
-	);
 	return (
 		<Container>
 			<MainPhoto />
@@ -196,14 +192,7 @@ function HeroSection({ videoUrl = "" }: Props) {
 				</ButtonContainer>
 			</ContentContainer>
 			<IframeContainer>
-				<PlayerStyled
-					video={videoUrl}
-					width={responsiveWidth}
-					height={responsiveHeight}
-					showTitle={false}
-					showByline={false}
-					showPortrait={false}
-				/>
+				<VideoPlayer vimeoUrl={videoUrl} isYoutube={false} />
 			</IframeContainer>
 		</Container>
 	);
