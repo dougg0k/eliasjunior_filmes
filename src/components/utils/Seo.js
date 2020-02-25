@@ -21,6 +21,7 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 
 	return (
 		<Helmet
+			defer={false}
 			htmlAttributes={{
 				lang,
 			}}
