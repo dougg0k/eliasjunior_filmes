@@ -15,12 +15,11 @@ module.exports = {
 		},
 	},
 	plugins: [
+		`gatsby-plugin-react-helmet`,
 		`gatsby-plugin-netlify-cms`,
-
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-netlify`,
-		`gatsby-plugin-react-helmet`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {

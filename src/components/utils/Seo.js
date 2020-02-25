@@ -1,6 +1,6 @@
 import { graphql, useStaticQuery } from "gatsby";
 import React from "react";
-import Helmet from "react-helmet";
+import { Helmet } from "react-helmet";
 
 function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 	const { site } = useStaticQuery(
@@ -17,7 +17,8 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 		`,
 	);
 
-	const metaDescription = description || site.siteMetadata.description;
+	const metaDescription = site.siteMetadata.description || description;
+	const metaAuthor = site.siteMetadata.author || "";
 
 	return (
 		<Helmet
@@ -30,6 +31,10 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 				title && title.length > 0 ? `%s | ${site.siteMetadata.title}` : null
 			}
 			meta={[
+				{
+					name: `author`,
+					content: metaAuthor,
+				},
 				{
 					name: `description`,
 					content: metaDescription,
