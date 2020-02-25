@@ -1,4 +1,3 @@
-import Vimeo from "@u-wave/react-vimeo";
 import { Link } from "gatsby";
 import * as React from "react";
 import Typical from "react-typical";
@@ -39,11 +38,6 @@ const IframeContainer = styled.div`
 	@media (max-width: 820px) {
 		margin-top: -50px;
 	}
-`;
-
-const PlayerStyled = styled(Vimeo)`
-	box-shadow: 0 0 10px ${COLOR_1};
-	display: flex;
 `;
 
 const ContentContainer = styled.div`

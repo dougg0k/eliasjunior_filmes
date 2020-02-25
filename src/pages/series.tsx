@@ -164,7 +164,6 @@ function SeriesPage() {
 		}
 	`);
 	const series = normalizeGraphQLData(data.allMarkdownRemark.edges);
-	console.log(series);
 	return (
 		<Container>
 			<SEO title="Series" />
@@ -210,7 +209,7 @@ function SeriesPage() {
 				<ContentChoiceContainer>
 					<Title>Serie</Title>
 					<SubTitle>Rota a Força Policial</SubTitle>
-					{series.map(item => (
+					{series.map((item: SeasonProps) => (
 						<ChoiceButton
 							key={item.title}
 							onClick={setSelectedSeason.bind(null, item)}
