@@ -19,6 +19,7 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 
 	const metaDescription = site.siteMetadata.description || description;
 	const metaAuthor = site.siteMetadata.author || "";
+	const metaTitle = title && title.length > 0 ? title : site.siteMetadata.title;
 
 	return (
 		<Helmet
@@ -29,7 +30,7 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 			bodyAttributes={{
 				id: "main-body",
 			}}
-			title={title && title.length > 0 ? title : site.siteMetadata.title}
+			title={metaTitle}
 			titleTemplate={
 				title && title.length > 0 ? `%s | ${site.siteMetadata.title}` : null
 			}
@@ -44,7 +45,7 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 				},
 				{
 					property: `og:title`,
-					content: title,
+					content: metaTitle,
 				},
 				{
 					property: `og:description`,
