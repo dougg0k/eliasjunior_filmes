@@ -18,7 +18,7 @@ const Container = styled.div`
 	flex-direction: row;
 	justify-content: space-evenly;
 	align-items: center;
-	padding-top: 320px;
+	padding-top: 300px;
 	padding-bottom: 100px;
 	@media (max-width: 1370px) {
 		flex-direction: column-reverse;
