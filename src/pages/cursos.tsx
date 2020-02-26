@@ -56,6 +56,7 @@ function CursosPage() {
 							secondOnClick={setIsTrailer.bind(null, true)}
 							isTrailer={isTrailer}
 							showButton={!!selectedCurso.trailerUrl}
+							mainButtonText="Assitir ao Curso"
 						/>
 					</>
 				</VideoContainer>
