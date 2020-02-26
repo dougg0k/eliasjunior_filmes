@@ -57,6 +57,7 @@ interface Props {
 	secondOnClick: () => void;
 	isTrailer: boolean;
 	showButton?: boolean;
+	mainButtonText?: string;
 }
 
 function VideoInformation({
@@ -66,6 +67,7 @@ function VideoInformation({
 	secondOnClick,
 	isTrailer,
 	showButton = true,
+	mainButtonText = "",
 }: Props) {
 	return (
 		<InformationContainer>
@@ -74,7 +76,7 @@ function VideoInformation({
 				{showButton &&
 					(isTrailer ? (
 						<SwitchButton onClick={firstOnClick} isAlt={isTrailer}>
-							Assistir ao Filme
+							{mainButtonText}
 						</SwitchButton>
 					) : (
 						<SwitchButton onClick={secondOnClick} isAlt={isTrailer}>

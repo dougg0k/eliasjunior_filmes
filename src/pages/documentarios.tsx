@@ -57,6 +57,7 @@ function DocumentariosPage() {
 							secondOnClick={setIsTrailer.bind(null, true)}
 							isTrailer={isTrailer}
 							showButton={!!selectedDocumentario.trailerUrl}
+							mainButtonText="Assitir ao Documentario"
 						/>
 					</>
 				</VideoContainer>

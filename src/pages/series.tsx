@@ -184,6 +184,7 @@ function SeriesPage() {
 									secondOnClick={setIsTrailer.bind(null, true)}
 									isTrailer={isTrailer}
 									showButton={!!selectedEpisode.trailerUrl}
+									mainButtonText="Assitir ao Episodio"
 								/>
 							</>
 						</VideoContainer>
