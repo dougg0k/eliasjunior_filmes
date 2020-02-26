@@ -8,7 +8,6 @@ export const wrapRootElement = ({ element }) => {
 		<React.Fragment>
 			<GlobalStyles />
 			<SEO />
-			<div id="modal-id" />
 			<LayoutHeaderFooter>{element}</LayoutHeaderFooter>
 		</React.Fragment>
 	);

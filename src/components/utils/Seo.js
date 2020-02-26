@@ -26,6 +26,9 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 			htmlAttributes={{
 				lang,
 			}}
+			bodyAttributes={{
+				id: "main-body",
+			}}
 			title={title && title.length > 0 ? title : site.siteMetadata.title}
 			titleTemplate={
 				title && title.length > 0 ? `%s | ${site.siteMetadata.title}` : null

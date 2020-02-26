@@ -211,7 +211,7 @@ function HeaderLogo() {
 }
 
 function Header() {
-	const [Modal, open, _, isOpen] = useModal("modal-id", {
+	const [Modal, open, _, isOpen] = useModal("main-body", {
 		preventScroll: true,
 	});
 	const { width } = useWindowSize();
