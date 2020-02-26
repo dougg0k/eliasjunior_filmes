@@ -24,6 +24,9 @@ const Container = styled.div`
 		flex-direction: column-reverse;
 		padding-top: 200px;
 	}
+	@media (max-width: 600px) {
+		padding-top: 150px;
+	}
 `;
 
 const IframeContainer = styled.div`
@@ -97,12 +100,18 @@ const SecondAdditionalText = styled.span`
 		text-indent: unset;
 		padding-left: 50px;
 	}
+	@media (max-width: 560px) {
+		padding-left: 30px;
+	}
 `;
 
 const TopTextContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	padding-left: 50px;
+	@media (max-width: 560px) {
+		padding-left: 30px;
+	}
 `;
 
 const ButtonContainer = styled.div`
@@ -110,6 +119,9 @@ const ButtonContainer = styled.div`
 	display: flex;
 	flex-direction: row;
 	text-align: center;
+	@media (max-width: 700px) {
+		margin-top: 45px;
+	}
 `;
 
 interface CommonButtonsProps {
@@ -129,8 +141,15 @@ const Button = styled(Link)`
 	border: ${(props: CommonButtonsProps) =>
 		props.alternative ? `2px solid ${COLOR_1}` : `none`};
 	text-decoration: none;
+	text-align: center;
+	display: flex;
+	align-items: center;
 	&:hover {
 		cursor: pointer;
+	}
+	@media (max-width: 700px) {
+		margin-right: 10px;
+		margin-left: 10px;
 	}
 `;
 

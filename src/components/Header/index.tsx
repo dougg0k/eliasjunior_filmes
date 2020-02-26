@@ -11,7 +11,11 @@ import {
 	COLOR_6,
 	WHITE_COLOR,
 } from "../../utils/colors";
-import { HEADER_HEIGHT, RESPONSIVE_HEADER_WIDTH } from "../../utils/constants";
+import {
+	HEADER_HEIGHT,
+	HIDE_ASSINE_BUTTON_WIDTH,
+	RESPONSIVE_HEADER_WIDTH,
+} from "../../utils/constants";
 import { normalizeGraphQLData, useWindowSize } from "../../utils/helpers";
 import Logo from "../common/Logo";
 
@@ -58,6 +62,7 @@ const StyledLink = styled(Link)`
 	font-size: 1.1em;
 	text-decoration: none;
 	transition: 0.3s;
+	white-space: nowrap;
 	&:hover {
 		background-color: ${WHITE_COLOR};
 		color: ${COLOR_1};
@@ -75,6 +80,9 @@ const LogoStyledLink = styled(Link)`
 
 const LogoContainer = styled.div`
 	margin-left: 50px;
+	@media (max-width: 560px) {
+		margin-left: 10px;
+	}
 `;
 
 const SideBar = styled.div`
@@ -110,6 +118,9 @@ const MobileButton = styled.button`
 	}
 	@media (max-width: 550px) {
 		margin-right: 165px;
+	}
+	@media (max-width: ${HIDE_ASSINE_BUTTON_WIDTH}px) {
+		margin-right: 30px;
 	}
 `;
 
@@ -200,7 +211,9 @@ function HeaderLogo() {
 }
 
 function Header() {
-	const [Modal, open, _, isOpen] = useModal("modal-id", true);
+	const [Modal, open, _, isOpen] = useModal("modal-id", {
+		preventScroll: true,
+	});
 	const { width } = useWindowSize();
 	const data = useStaticQuery(graphql`
 		query HeaderQuery {
@@ -249,10 +262,12 @@ function Header() {
 						<NavMenu data={headerData} />
 					</HeaderOptionsContainer>
 				)}
-				<ButtonAssine to="/inscricao">
-					<IconStyled />
-					Assinar Conteudo
-				</ButtonAssine>
+				{width && width > HIDE_ASSINE_BUTTON_WIDTH && (
+					<ButtonAssine to="/inscricao">
+						<IconStyled />
+						Assinar Conteudo
+					</ButtonAssine>
+				)}
 			</Container>
 		</>
 	);

@@ -56,6 +56,7 @@ const TitlesContainer = styled.div`
 
 const SideTitle = styled.h3`
 	font-size: 1.4em;
+	text-align: center;
 `;
 
 const FormContainer = styled.div`

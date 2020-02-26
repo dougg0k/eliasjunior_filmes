@@ -12,6 +12,9 @@ const CommonVideoContainer = styled.div`
 	padding-top: 20px;
 	justify-content: center;
 	align-items: center;
+	@media (max-width: 550px) {
+		padding: 50px 0;
+	}
 `;
 
 const CommonVideoItem = styled.div`
@@ -20,6 +23,11 @@ const CommonVideoItem = styled.div`
 	align-items: center;
 	margin: 20px;
 	width: 430px;
+	@media (max-width: 550px) {
+		margin: 0;
+		width: auto;
+		margin-bottom: 30px;
+	}
 `;
 
 const CommonVideoTitle = styled.span`
