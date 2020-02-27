@@ -81,6 +81,11 @@ const BancoOpcaoContainer = styled.div`
 	flex-direction: row;
 	align-items: center;
 	height: 150px;
+	@media (max-width: 430px) {
+		flex-direction: column;
+		height: auto;
+		margin-top: 20px;
+	}
 `;
 
 const TextContainer = styled.div`
@@ -111,6 +116,9 @@ const TextLine = styled.div`
 const LogoContainer = styled.div`
 	height: 100px;
 	width: 150px;
+	@media (max-width: 430px) {
+		display: inline-flex;
+	}
 `;
 
 const AvisoContainer = styled.div`
