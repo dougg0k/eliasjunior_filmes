@@ -39,29 +39,28 @@ function DocumentariosPage() {
 	return (
 		<Container>
 			<SEO title="Documentarios" />
-			{selectedDocumentario && (
-				<VideoContainer
-					title={selectedDocumentario.title}
-					pictureUrl={selectedDocumentario.additionalPicture}
-				>
-					<>
-						<VideoPlayer
-							vimeoUrl={selectedDocumentario.url}
-							youtubeUrl={selectedDocumentario.trailerUrl}
-							isYoutube={!!selectedDocumentario.trailerUrl && isTrailer}
-						/>
-						<VideoInformation
-							title={selectedDocumentario.title}
-							description={selectedDocumentario.description}
-							firstOnClick={setIsTrailer.bind(null, false)}
-							secondOnClick={setIsTrailer.bind(null, true)}
-							isTrailer={isTrailer}
-							showButton={!!selectedDocumentario.trailerUrl}
-							mainButtonText="Assitir ao Documentario"
-						/>
-					</>
-				</VideoContainer>
-			)}
+			<VideoContainer
+				title={selectedDocumentario?.title}
+				pictureUrl={selectedDocumentario?.additionalPicture}
+				show={!!selectedDocumentario}
+			>
+				<>
+					<VideoPlayer
+						vimeoUrl={selectedDocumentario?.url}
+						youtubeUrl={selectedDocumentario?.trailerUrl}
+						isYoutube={!!selectedDocumentario?.trailerUrl && isTrailer}
+					/>
+					<VideoInformation
+						title={selectedDocumentario?.title}
+						description={selectedDocumentario?.description}
+						firstOnClick={setIsTrailer.bind(null, false)}
+						secondOnClick={setIsTrailer.bind(null, true)}
+						isTrailer={isTrailer}
+						showButton={!!selectedDocumentario?.trailerUrl}
+						mainButtonText="Assitir ao Documentario"
+					/>
+				</>
+			</VideoContainer>
 			<Videos
 				videosMainTitle="Documentarios"
 				videos={documentarios}

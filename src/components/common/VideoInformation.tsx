@@ -51,7 +51,7 @@ const TopInformation = styled.div`
 `;
 
 interface Props {
-	title: string;
+	title?: string;
 	description?: string;
 	firstOnClick: () => void;
 	secondOnClick: () => void;
@@ -61,7 +61,7 @@ interface Props {
 }
 
 function VideoInformation({
-	title,
+	title = "",
 	description,
 	firstOnClick,
 	secondOnClick,

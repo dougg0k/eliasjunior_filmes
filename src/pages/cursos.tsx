@@ -38,29 +38,28 @@ function CursosPage() {
 	return (
 		<Container>
 			<SEO title="Cursos" />
-			{selectedCurso && (
-				<VideoContainer
-					title={selectedCurso.title}
-					pictureUrl={selectedCurso.additionalPicture}
-				>
-					<>
-						<VideoPlayer
-							vimeoUrl={selectedCurso.url}
-							youtubeUrl={selectedCurso.trailerUrl}
-							isYoutube={!!selectedCurso.trailerUrl && isTrailer}
-						/>
-						<VideoInformation
-							title={selectedCurso.title}
-							description={selectedCurso.description}
-							firstOnClick={setIsTrailer.bind(null, false)}
-							secondOnClick={setIsTrailer.bind(null, true)}
-							isTrailer={isTrailer}
-							showButton={!!selectedCurso.trailerUrl}
-							mainButtonText="Assitir ao Curso"
-						/>
-					</>
-				</VideoContainer>
-			)}
+			<VideoContainer
+				title={selectedCurso?.title}
+				pictureUrl={selectedCurso?.additionalPicture}
+				show={!!selectedCurso}
+			>
+				<>
+					<VideoPlayer
+						vimeoUrl={selectedCurso?.url}
+						youtubeUrl={selectedCurso?.trailerUrl}
+						isYoutube={!!selectedCurso?.trailerUrl && isTrailer}
+					/>
+					<VideoInformation
+						title={selectedCurso?.title}
+						description={selectedCurso?.description}
+						firstOnClick={setIsTrailer.bind(null, false)}
+						secondOnClick={setIsTrailer.bind(null, true)}
+						isTrailer={isTrailer}
+						showButton={!!selectedCurso?.trailerUrl}
+						mainButtonText="Assitir ao Curso"
+					/>
+				</>
+			</VideoContainer>
 			<Videos
 				videosMainTitle="Cursos"
 				videos={cursos}

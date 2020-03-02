@@ -13,6 +13,8 @@ Hosteamento:
 - Github - <http://github.com/>
 - Netlify - <https://www.netlify.com/>
 
+Caso dedica utilizar, adicionar mensagem no footer de copyright.
+
 Recomendacoes:
 
 - Gerar novo botao o Paypal, o moderno.

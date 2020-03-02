@@ -7,6 +7,7 @@ const StyledImg = styled(Img)`
 	position: unset !important;
 	background-size: contain;
 	background-position: top;
+	background-repeat: no-repeat;
 	z-index: 0;
 `;
 

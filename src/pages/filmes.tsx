@@ -38,29 +38,28 @@ function FilmesPage() {
 	return (
 		<Container>
 			<SEO title="Filmes" />
-			{selectedMovie && (
-				<VideoContainer
-					title={selectedMovie.title}
-					pictureUrl={selectedMovie.additionalPicture}
-				>
-					<>
-						<VideoPlayer
-							vimeoUrl={selectedMovie.url}
-							youtubeUrl={selectedMovie.trailerUrl}
-							isYoutube={!!selectedMovie.trailerUrl && isTrailer}
-						/>
-						<VideoInformation
-							title={selectedMovie.title}
-							description={selectedMovie.description}
-							firstOnClick={setIsTrailer.bind(null, false)}
-							secondOnClick={setIsTrailer.bind(null, true)}
-							isTrailer={isTrailer}
-							showButton={!!selectedMovie.trailerUrl}
-							mainButtonText="Assitir ao Filme"
-						/>
-					</>
-				</VideoContainer>
-			)}
+			<VideoContainer
+				title={selectedMovie?.title}
+				pictureUrl={selectedMovie?.additionalPicture}
+				show={!!selectedMovie}
+			>
+				<>
+					<VideoPlayer
+						vimeoUrl={selectedMovie?.url}
+						youtubeUrl={selectedMovie?.trailerUrl}
+						isYoutube={!!selectedMovie?.trailerUrl && isTrailer}
+					/>
+					<VideoInformation
+						title={selectedMovie?.title}
+						description={selectedMovie?.description}
+						firstOnClick={setIsTrailer.bind(null, false)}
+						secondOnClick={setIsTrailer.bind(null, true)}
+						isTrailer={isTrailer}
+						showButton={!!selectedMovie?.trailerUrl}
+						mainButtonText="Assitir ao Filme"
+					/>
+				</>
+			</VideoContainer>
 			<Videos
 				videosMainTitle="Filmes"
 				videos={movies}

@@ -169,26 +169,27 @@ function SeriesPage() {
 			<SEO title="Series" />
 			{selectedSeason ? (
 				<ContentContainer>
-					{selectedEpisode && (
-						<VideoContainer title={selectedEpisode.title}>
-							<>
-								<VideoPlayer
-									vimeoUrl={selectedEpisode.url}
-									youtubeUrl={selectedEpisode.trailerUrl}
-									isYoutube={!!selectedEpisode.trailerUrl && isTrailer}
-								/>
-								<VideoInformation
-									title={selectedEpisode.title}
-									description={selectedEpisode.description}
-									firstOnClick={setIsTrailer.bind(null, false)}
-									secondOnClick={setIsTrailer.bind(null, true)}
-									isTrailer={isTrailer}
-									showButton={!!selectedEpisode.trailerUrl}
-									mainButtonText="Assitir ao Episodio"
-								/>
-							</>
-						</VideoContainer>
-					)}
+					<VideoContainer
+						title={selectedEpisode?.title}
+						show={!!selectedEpisode}
+					>
+						<>
+							<VideoPlayer
+								vimeoUrl={selectedEpisode?.url}
+								youtubeUrl={selectedEpisode?.trailerUrl}
+								isYoutube={!!selectedEpisode?.trailerUrl && isTrailer}
+							/>
+							<VideoInformation
+								title={selectedEpisode?.title}
+								description={selectedEpisode?.description}
+								firstOnClick={setIsTrailer.bind(null, false)}
+								secondOnClick={setIsTrailer.bind(null, true)}
+								isTrailer={isTrailer}
+								showButton={!!selectedEpisode?.trailerUrl}
+								mainButtonText="Assitir ao Episodio"
+							/>
+						</>
+					</VideoContainer>
 					<EpisodesChoiceTopContainer>
 						<SeasonTitle>{selectedSeason.title}</SeasonTitle>
 						<BackButton onClick={resetSelection}>
