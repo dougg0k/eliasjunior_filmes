@@ -71,3 +71,4 @@ yarn-error.log
 .vscode
 # Local Netlify folder
 .netlify
+recomendations.txt
