@@ -8,7 +8,8 @@
 		"format": "prettier --write \"**/*.{js,jsx,json,md}\"",
 		"start": "npm run develop",
 		"serve": "gatsby serve",
-		"clean": "gatsby clean"
+		"clean": "gatsby clean",
+		"deploy:manual": "npm run clean && npm run build && netlify deploy --prod --dir=./public"
 	},
 	"dependencies": {
 		"@u-wave/react-vimeo": "^0.8.2",
