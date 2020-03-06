@@ -1,11 +1,11 @@
+import { FacebookSquare } from "@styled-icons/boxicons-logos/FacebookSquare";
+import { CameraMovie } from "@styled-icons/boxicons-regular/CameraMovie";
+import { Whatsapp } from "@styled-icons/fa-brands/Whatsapp";
+import { Vimeo } from "@styled-icons/icomoon/Vimeo";
+import { Youtube2 } from "@styled-icons/icomoon/Youtube2";
+import { SocialInstagram } from "@styled-icons/typicons/SocialInstagram";
 import { useEffect, useState } from "react";
-import { FacebookSquare } from "styled-icons/boxicons-logos/FacebookSquare";
-import { CameraMovie } from "styled-icons/boxicons-regular/CameraMovie";
-import { Whatsapp } from "styled-icons/fa-brands/Whatsapp";
-import { Vimeo } from "styled-icons/icomoon/Vimeo";
-import { Youtube2 } from "styled-icons/icomoon/Youtube2";
 import { StyledIcon } from "styled-icons/types";
-import { SocialInstagram } from "styled-icons/typicons/SocialInstagram";
 
 export function useWindowSize() {
 	const isClient = typeof window === "object";

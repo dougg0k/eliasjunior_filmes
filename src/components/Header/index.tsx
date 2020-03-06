@@ -1,9 +1,9 @@
+import { DownArrowAlt } from "@styled-icons/boxicons-regular/DownArrowAlt";
+import { Close } from "@styled-icons/material/Close";
 import { graphql, Link, useStaticQuery } from "gatsby";
 import * as React from "react";
 import useModal from "react-hooks-use-modal";
 import styled, { keyframes } from "styled-components";
-import { DownArrowAlt } from "styled-icons/boxicons-regular/DownArrowAlt";
-import { Close } from "styled-icons/material/Close";
 import {
 	COLOR_1,
 	COLOR_4,

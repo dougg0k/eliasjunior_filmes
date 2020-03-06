@@ -1,7 +1,7 @@
+import { CartArrowDown } from "@styled-icons/fa-solid/CartArrowDown";
 import { Link } from "gatsby";
 import * as React from "react";
 import styled, { keyframes } from "styled-components";
-import { CartArrowDown } from "styled-icons/fa-solid/CartArrowDown";
 import { COLOR_5, WHITE_COLOR } from "../../utils/colors";
 
 const jumpingKeyframe = keyframes`

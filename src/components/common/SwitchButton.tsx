@@ -1,6 +1,6 @@
+import { SwitchVideo } from "@styled-icons/material/SwitchVideo";
 import * as React from "react";
 import styled from "styled-components";
-import { SwitchVideo } from "styled-icons/material/SwitchVideo";
 import { COLOR_8, COLOR_9, WHITE_COLOR } from "../../utils/colors";
 
 interface SwitchButtonProps {
