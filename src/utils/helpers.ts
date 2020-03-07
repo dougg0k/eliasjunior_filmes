@@ -147,3 +147,7 @@ export function getYoutubeIdFromUrl(url: string) {
 export function getCurrentPath(): string {
 	return typeof window !== "undefined" ? window.location.href : "";
 }
+
+export function getCurrentYear(): number {
+	return new Date().getFullYear();
+}

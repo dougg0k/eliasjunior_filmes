@@ -3,12 +3,16 @@ import * as React from "react";
 import styled from "styled-components";
 import { StyledIcon } from "styled-icons/types";
 import { COLOR_1, WHITE_COLOR } from "../../utils/colors";
-import { addIconsToItems, normalizeGraphQLData } from "../../utils/helpers";
+import {
+	addIconsToItems,
+	getCurrentYear,
+	normalizeGraphQLData,
+} from "../../utils/helpers";
 import PhotoLogo from "../common/PhotoLogo";
 
 const Container = styled.footer`
 	width: 100%;
-	height: 300px;
+	height: 350px;
 	background-color: ${COLOR_1};
 	position: relative;
 	bottom: 0;
@@ -71,6 +75,25 @@ const FooterTitle = styled.span`
 	padding: 10px 0;
 `;
 
+const BottomMessage = styled.span`
+	color: ${WHITE_COLOR};
+	font-size: 1em;
+	font-size: 600;
+	margin-top: 5px;
+	margin-right: 5px;
+`;
+
+const BottomContainer = styled.div`
+	display: flex;
+	flex-direction: row;
+	text-align: center;
+	padding-bottom: 20px;
+	padding-top: 20px;
+	@media (max-width: 500px) {
+		flex-direction: column;
+	}
+`;
+
 interface FooterProps {
 	url: string;
 	text: string;
@@ -98,6 +121,7 @@ function Footer() {
 	const footerData = addIconsToItems(
 		normalizeGraphQLData(data.allMarkdownRemark.edges),
 	);
+	const currentYear = getCurrentYear();
 	return (
 		<Container>
 			<FooterTitle>Diretor Elias Junior</FooterTitle>
@@ -125,6 +149,12 @@ function Footer() {
 					);
 				})}
 			</LinksContainer>
+			<BottomContainer>
+				<BottomMessage>
+					Copyright &copy; {currentYear} HDV Studio Cine Video LTDA.
+				</BottomMessage>
+				<BottomMessage>Todos os Direitos Reservados.</BottomMessage>
+			</BottomContainer>
 		</Container>
 	);
 }
