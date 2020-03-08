@@ -107,6 +107,10 @@ const TextPosfix = styled.span`
 	display: block;
 `;
 
+const AnchorPosFix = styled.a`
+	text-decoration: none;
+`;
+
 const TextLine = styled.div`
 	display: flex;
 	flex-direction: row;
@@ -241,7 +245,9 @@ function InscricaoPage() {
 				</AvisoText>
 				<TextLine>
 					<TextPrefix>WhatsApp:</TextPrefix>
-					<TextPosfix>(11) 94899-7038</TextPosfix>
+					<TextPosfix>
+						<AnchorPosFix href="tel:11948997038">(11) 94899-7038</AnchorPosFix>
+					</TextPosfix>
 				</TextLine>
 				<TextLine>
 					<TextPrefix>E-Mail:</TextPrefix>
