@@ -14,9 +14,29 @@
     Feature-Policy = "vibrate 'none'; geolocation 'none'; midi 'none'; notifications 'none'; push 'none'; sync-xhr 'none'; microphone 'none'; camera 'none'; magnetometer 'none'; gyroscope 'none'; speaker 'none'; vibrate 'none'; fullscreen 'none'; payment 'none'"
 
 [[headers]]
-  for = "/assets/*"
+  for = "*.js"
   [headers.values]
-    Cache-Control = "public, s-max-age=604800"
+    Cache-Control = "public, s-max-age=1296000"
+
+[[headers]]
+  for = "*.png"
+  [headers.values]
+    Cache-Control = "public, s-max-age=1296000"
+
+[[headers]]
+  for = "*.webp"
+  [headers.values]
+    Cache-Control = "public, s-max-age=1296000"
+
+[[headers]]
+  for = "*.jpg"
+  [headers.values]
+    Cache-Control = "public, s-max-age=1296000"
+
+[[headers]]
+  for = "*.jpeg"
+  [headers.values]
+    Cache-Control = "public, s-max-age=1296000"
 
 [build.processing]
   skip_processing = false
@@ -32,7 +52,7 @@
   compress = true
 
 # [[redirects]]
-#   from = "https://www.eliasjuniorfilmes.com.br/*"
+#   from = "netlify-url/*"
 #   to = "https://eliasjuniorfilmes.com.br/:splat"
 #   status = 301
 #   force = true
