@@ -1,10 +1,14 @@
 import React from "react";
 import Footer from "../Footer";
 import Header from "../Header";
+import GlobalStyle from "./GlobalStyle";
+import SEO from "./Seo";
 
-function LayoutHeaderFooter({ children }) {
+function Layout({ children }) {
 	return (
 		<>
+			<GlobalStyle />
+			<SEO />
 			<Header />
 			{children}
 			<Footer />
@@ -12,4 +16,4 @@ function LayoutHeaderFooter({ children }) {
 	);
 }
 
-export default LayoutHeaderFooter;
+export default Layout;

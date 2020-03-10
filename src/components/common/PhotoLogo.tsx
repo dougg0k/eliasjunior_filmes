@@ -12,7 +12,7 @@ const PhotoLogo = () => {
 		query {
 			placeholderImage: file(relativePath: { eq: "photo_logo.webp" }) {
 				childImageSharp {
-					fluid(quality: 100) {
+					fluid(quality: 90) {
 						...GatsbyImageSharpFluid_withWebp
 					}
 				}

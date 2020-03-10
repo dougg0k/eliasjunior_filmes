@@ -11,6 +11,8 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 						title
 						description
 						author
+						siteUrl
+						keywords
 					}
 				}
 			}
@@ -20,6 +22,7 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 	const metaDescription = site.siteMetadata.description || description;
 	const metaAuthor = site.siteMetadata.author || "";
 	const metaTitle = title && title.length > 0 ? title : site.siteMetadata.title;
+	const keywords = site.siteMetadata.keywords || "";
 
 	return (
 		<Helmet
@@ -44,6 +47,10 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 					content: metaDescription,
 				},
 				{
+					name: `keywords`,
+					content: keywords,
+				},
+				{
 					property: `og:title`,
 					content: metaTitle,
 				},
@@ -54,6 +61,10 @@ function SEO({ description = "", lang = "pt-br", meta = [], title = "" }) {
 				{
 					property: `og:type`,
 					content: `website`,
+				},
+				{
+					property: `og:url`,
+					content: site.siteMetadata.siteUrl,
 				},
 			].concat(meta)}
 		/>

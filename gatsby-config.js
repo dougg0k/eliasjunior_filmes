@@ -1,9 +1,17 @@
+const netlifyCmsPaths = {
+	resolve: `gatsby-plugin-netlify-cms-paths`,
+	options: {
+		cmsConfig: `/static/admin/config.yml`,
+	},
+};
+
 module.exports = {
 	siteMetadata: {
 		title: `Elias Junior Filmes`,
 		description: `Filmes, series, documentarios, videoclipes, cursos, especiais e entrevista da Rota, do GATE, do Canil e de outras unidades das nossa policias.`,
 		author: `Douglas Galdino`,
 		siteUrl: `https://eliasjuniorfilmes.com.br`,
+		keywords: `policia, rota, filmes, series, documentarios, videoclipes, cursos`,
 		social: {
 			facebook: `https://www.facebook.com/diretoreliasjunior/`,
 			facebook_two: `https://www.facebook.com/rotaforcapolicial/`,
@@ -20,6 +28,8 @@ module.exports = {
 		`gatsby-plugin-typescript`,
 		`gatsby-plugin-styled-components`,
 		`gatsby-plugin-netlify`,
+		`gatsby-plugin-sitemap`,
+		`gatsby-plugin-robots-txt`,
 		{
 			resolve: `gatsby-source-filesystem`,
 			options: {
@@ -34,21 +44,16 @@ module.exports = {
 				path: `${__dirname}/static/content`,
 			},
 		},
-		`gatsby-transformer-remark`,
-		{
-			resolve: `gatsby-plugin-prefetch-google-fonts`,
-			options: {
-				fonts: [
-					{
-						family: `Open Sans`,
-						variants: [`300`, `400`, `600`, `700`],
-					},
-				],
-			},
-		},
 		`gatsby-plugin-react-svg`,
 		`gatsby-transformer-sharp`,
 		`gatsby-plugin-sharp`,
+		`gatsby-transformer-remark`,
+		{
+			resolve: `gatsby-plugin-layout`,
+			options: {
+				component: require.resolve(`./src/components/utils/Layout`),
+			},
+		},
 		{
 			resolve: `gatsby-plugin-manifest`,
 			options: {
@@ -59,6 +64,17 @@ module.exports = {
 				theme_color: `#282c34`,
 				display: `minimal-ui`,
 				icon: `src/images/favicon.png`,
+			},
+		},
+		{
+			resolve: `gatsby-plugin-prefetch-google-fonts`,
+			options: {
+				fonts: [
+					{
+						family: `Open Sans`,
+						variants: [`300`, `400`, `600`, `700`],
+					},
+				],
 			},
 		},
 		{

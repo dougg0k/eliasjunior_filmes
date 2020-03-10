@@ -241,7 +241,7 @@ function InscricaoPage() {
 				<AvisoTitle>Importante</AvisoTitle>
 				<AvisoText>
 					Apos fazer o deposito e necessario enviar a foto do comprovante por
-					WhatsApp ou E-Mail para liberação do acesso.
+					WhatsApp ou Email para liberação do acesso.
 				</AvisoText>
 				<TextLine>
 					<TextPrefix>WhatsApp:</TextPrefix>
@@ -250,7 +250,7 @@ function InscricaoPage() {
 					</TextPosfix>
 				</TextLine>
 				<TextLine>
-					<TextPrefix>E-Mail:</TextPrefix>
+					<TextPrefix>Email:</TextPrefix>
 					<TextPosfix>
 						<a href="mailto:info@eliasjuniorfilmes.com.br">
 							info@eliasjuniorfilmes.com.br
