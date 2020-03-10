@@ -160,6 +160,17 @@ const Button = styled(Link)`
 
 const LottieContainer = styled.div`
 	position: relative;
+	margin-left: -100px;
+	@media (max-width: 1370px) {
+		margin-left: 0;
+	}
+`;
+
+const RightContainer = styled.div`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 `;
 
 const typicalSteps = [
@@ -219,8 +230,10 @@ function HeroSection({ videoUrl = "" }: Props) {
 					</Button>
 				</ButtonContainer>
 			</ContentContainer>
-			<IframeContainer>
-				<VideoPlayer vimeoUrl={videoUrl} isYoutube={false} />
+			<RightContainer>
+				<IframeContainer>
+					<VideoPlayer vimeoUrl={videoUrl} isYoutube={false} />
+				</IframeContainer>
 				<LottieContainer>
 					<Lottie
 						options={defaultOptions}
@@ -229,7 +242,7 @@ function HeroSection({ videoUrl = "" }: Props) {
 						width={200}
 					/>
 				</LottieContainer>
-			</IframeContainer>
+			</RightContainer>
 		</Container>
 	);
 }
