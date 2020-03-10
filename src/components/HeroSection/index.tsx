@@ -6,6 +6,7 @@ import styled from "styled-components";
 import animationData from "../../images/police_car.json";
 import { COLOR_1, COLOR_3, WHITE_COLOR } from "../../utils/colors";
 import { HEADER_HEIGHT } from "../../utils/constants";
+import { useWindowSize } from "../../utils/helpers";
 import AssineButton from "../common/AssineButton";
 import MainPhoto from "../common/MainPhoto";
 import VideoPlayer from "../common/VideoPlayer";
@@ -201,6 +202,7 @@ interface Props {
 }
 
 function HeroSection({ videoUrl = "" }: Props) {
+	const { width } = useWindowSize();
 	return (
 		<Container>
 			<MainPhoto />
@@ -239,7 +241,7 @@ function HeroSection({ videoUrl = "" }: Props) {
 						options={defaultOptions}
 						isClickToPauseDisabled={true}
 						height="auto"
-						width={200}
+						width={Number(width) < 600 ? 150 : 200}
 					/>
 				</LottieContainer>
 			</RightContainer>
