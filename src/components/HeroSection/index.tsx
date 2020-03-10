@@ -1,7 +1,9 @@
 import { Link } from "gatsby";
 import * as React from "react";
+import Lottie from "react-lottie";
 import Typical from "react-typical";
 import styled from "styled-components";
+import animationData from "../../images/police_car.json";
 import { COLOR_1, COLOR_3, WHITE_COLOR } from "../../utils/colors";
 import { HEADER_HEIGHT } from "../../utils/constants";
 import AssineButton from "../common/AssineButton";
@@ -173,6 +175,12 @@ const typicalSteps = [
 	1000,
 ];
 
+const defaultOptions = {
+	loop: true,
+	autoplay: true,
+	animationData,
+};
+
 interface Props {
 	videoUrl?: string;
 }
@@ -209,6 +217,12 @@ function HeroSection({ videoUrl = "" }: Props) {
 			</ContentContainer>
 			<IframeContainer>
 				<VideoPlayer vimeoUrl={videoUrl} isYoutube={false} />
+				<Lottie
+					options={defaultOptions}
+					isClickToPauseDisabled={true}
+					height="auto"
+					width={200}
+				/>
 			</IframeContainer>
 		</Container>
 	);
