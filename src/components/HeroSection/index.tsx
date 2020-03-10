@@ -151,6 +151,9 @@ const Button = styled(Link)`
 		margin-right: 10px;
 		margin-left: 10px;
 	}
+	@media (max-width: 355px) {
+		padding: 10px 10px;
+	}
 `;
 
 const typicalSteps = [

@@ -4,7 +4,7 @@ import BancoDoBrasilLogo from "../components/common/BancoDoBrasilLogo";
 import BradescoLogo from "../components/common/BradescoLogo";
 import Container from "../components/common/Container";
 import SEO from "../components/utils/Seo";
-import { COLOR_1, COLOR_6, COLOR_7 } from "../utils/colors";
+import { COLOR_1, COLOR_4, COLOR_6, COLOR_7 } from "../utils/colors";
 
 const Title = styled.h1`
 	font-weight: 600;
@@ -46,6 +46,16 @@ const RightSideContainer = styled.div`
 	@media (max-width: 1200px) {
 		width: 100%;
 		margin-top: 40px;
+		padding-bottom: 50px;
+		box-shadow: 0 8px 6px -6px ${COLOR_4};
+		&:before {
+			content: "";
+			left: 0;
+			bottom: 0;
+			height: 1px;
+			width: 70px;
+			border-top: 1px solid ${COLOR_6};
+		}
 	}
 `;
 
@@ -147,6 +157,9 @@ const AvisoText = styled.p`
 	margin-top: 10px;
 	width: 50%;
 	text-align: center;
+	@media (max-width: 450px) {
+		width: 70%;
+	}
 `;
 
 function InscricaoPage() {

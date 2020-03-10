@@ -91,7 +91,7 @@ const SideBar = styled.div`
 	top: 0;
 	bottom: 0;
 	max-width: 300px;
-	width: 250px;
+	width: 220px;
 	height: 100vh;
 	z-index: 150;
 	position: fixed;
