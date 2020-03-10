@@ -158,6 +158,10 @@ const Button = styled(Link)`
 	}
 `;
 
+const LottieContainer = styled.div`
+	position: relative;
+`;
+
 const typicalSteps = [
 	"Filmes",
 	1000,
@@ -217,12 +221,14 @@ function HeroSection({ videoUrl = "" }: Props) {
 			</ContentContainer>
 			<IframeContainer>
 				<VideoPlayer vimeoUrl={videoUrl} isYoutube={false} />
-				<Lottie
-					options={defaultOptions}
-					isClickToPauseDisabled={true}
-					height="auto"
-					width={200}
-				/>
+				<LottieContainer>
+					<Lottie
+						options={defaultOptions}
+						isClickToPauseDisabled={true}
+						height="auto"
+						width={200}
+					/>
+				</LottieContainer>
 			</IframeContainer>
 		</Container>
 	);
