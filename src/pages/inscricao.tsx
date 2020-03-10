@@ -253,7 +253,7 @@ function InscricaoPage() {
 			<AvisoContainer>
 				<AvisoTitle>Importante</AvisoTitle>
 				<AvisoText>
-					Apos fazer o deposito e necessario enviar a foto do comprovante por
+					Apos fazer o deposito é necessário enviar a foto do comprovante por
 					WhatsApp ou Email para liberação do acesso.
 				</AvisoText>
 				<TextLine>
