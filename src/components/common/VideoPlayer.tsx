@@ -63,10 +63,7 @@ function VideoPlayer({
 	const formattedUrl = removeProtocolAndDomainFromUrl(vimeoUrl || "");
 	const isYoutubeMain = formattedUrl.startsWith("youtube");
 	return (
-		<PlayerContainer
-			responsiveWidth={responsiveWidth}
-			responsiveHeight={responsiveHeight}
-		>
+		<PlayerContainer>
 			{isYoutube ? (
 				<YoutubePlayerStyled
 					video={getYoutubeIdFromUrl(youtubeUrl || "")}
