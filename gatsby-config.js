@@ -77,6 +77,7 @@ module.exports = {
 				],
 			},
 		},
+		`gatsby-plugin-remove-generator`,
 		{
 			resolve: "gatsby-plugin-eslint",
 			options: {
